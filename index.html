@@ -3,316 +3,1018 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heroico Cuerpo de Bomberos de Tapachula</title>
+
+    <!-- ===== SEO BÁSICO ===== -->
+    <title>Heroico Cuerpo de Bomberos de Tapachula | Emergencias 911</title>
+    <meta name="description" content="El Heroico Cuerpo de Bomberos de Tapachula protege vidas y patrimonio las 24 horas. Servicios de extinción de incendios, rescate, atención médica prehospitalaria. Emergencias: 911.">
+    <meta name="keywords" content="bomberos tapachula, emergencias tapachula, incendios tapachula, rescate tapachula, chiapas bomberos, cuerpo de bomberos, 911 tapachula">
+    <meta name="author" content="Heroico Cuerpo de Bomberos de Tapachula">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bomberos.tapachula.gob.mx/">
+
+    <!-- ===== OPEN GRAPH (Facebook / WhatsApp preview) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bomberos.tapachula.gob.mx/">
+    <meta property="og:title" content="Heroico Cuerpo de Bomberos de Tapachula">
+    <meta property="og:description" content="Protegiendo vidas y el patrimonio de Tapachula las 24 horas del día, los 365 días del año. Emergencias: 911 | Tel: (962) 625-2065">
+    <meta property="og:image" content="fondoB.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Bomberos Tapachula">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Heroico Cuerpo de Bomberos de Tapachula">
+    <meta name="twitter:description" content="Protegiendo vidas y el patrimonio de Tapachula las 24 horas. Emergencias: 911">
+    <meta name="twitter:image" content="fondoB.png">
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/png" href="logoB.png">
+    <link rel="apple-touch-icon" href="logoB.png">
+
+    <!-- ===== ACCESIBILIDAD: tema de color para navegadores móviles ===== -->
+    <meta name="theme-color" content="#C62828">
+
+    <!-- ===== SCHEMA.ORG — Datos estructurados para Google ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FireStation",
+        "name": "Heroico Cuerpo de Bomberos de Tapachula",
+        "description": "Cuerpo de bomberos profesional que protege a la comunidad de Tapachula, Chiapas.",
+        "url": "https://bomberos.tapachula.gob.mx/",
+        "telephone": "+52-962-625-2065",
+        "email": "contacto@bomberos.tapachula.gob.mx",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Octava Sur S/N, Los Naranjos, San Sebastián",
+            "addressLocality": "Tapachula de Córdova y Ordóñez",
+            "addressRegion": "Chiapas",
+            "postalCode": "30700",
+            "addressCountry": "MX"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 14.9033181,
+            "longitude": -92.2724105
+        },
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-13:00",
+        "sameAs": [
+            "https://www.facebook.com/OficialBomberosTap"
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <!-- ELIMINADO: emergency-header -->
-            
-<div class="logo-section">
-    <div class="logo-placeholder" style="background: white; padding: 5px;">
-        <img src="logoB.png" 
-             alt="Logo Heroico Cuerpo de Bomberos de Tapachula"
-             style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+    <!-- ACCESIBILIDAD: saltar al contenido principal -->
+    <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="logoB.png" alt="Bomberos Tapachula">
+            </div>
+            <div class="preloader-text">
+                <span class="preloader-title">HEROICO CUERPO DE BOMBEROS</span>
+                <span class="preloader-sub">TAPACHULA</span>
+            </div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
+            <span class="preloader-percent" id="preloaderPercent">0%</span>
+        </div>
+        <div class="preloader-flames" aria-hidden="true">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
     </div>
+
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- TOP BAR DE EMERGENCIAS -->
+    <div class="emergency-bar">
+        <div class="container emergency-bar-inner">
+            <span><i class="fas fa-exclamation-triangle"></i> EMERGENCIAS: Llama al <a href="tel:911">911</a></span>
+            <span class="sep">|</span>
+            <span><i class="fas fa-phone"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
+            <span class="sep">|</span>
+            <span><i class="fas fa-clock"></i> Servicio 24/7 los 365 días</span>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <img src="logoB.png" alt="Logo Bomberos Tapachula">
+                </div>
                 <div class="logo-text">
-                    <h1>HEROICO CUERPO DE BOMBEROS <span>TAPACHULA</span></h1>
+                    <span class="logo-top">HEROICO CUERPO DE BOMBEROS</span>
+                    <span class="logo-bottom">TAPACHULA</span>
                 </div>
             </div>
-            
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#estructura">Estructura</a></li>
-                    <li><a href="#voluntariado">Voluntariado</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="mainNav" role="navigation" aria-label="Menú principal">
+                <ul role="list">
+                    <li><a href="#inicio" aria-label="Ir a Inicio">Inicio</a></li>
+                    <li><a href="#nosotros" aria-label="Ir a Nosotros">Nosotros</a></li>
+                    <li><a href="#servicios" aria-label="Ir a Servicios">Servicios</a></li>
+                    <li><a href="#galeria" aria-label="Ir a Galería">Galería</a></li>
+                    <li><a href="#voluntariado" aria-label="Ir a Voluntariado">Voluntariado</a></li>
+                    <li><a href="#estaciones" aria-label="Ir a Estaciones">Estaciones</a></li>
+                    <li><a href="#noticias" aria-label="Ir a Noticias">Noticias</a></li>
+                    <li><a href="#prevencion" aria-label="Ir a Consejos de Prevención">Prevención</a></li>
+                    <li><a href="#contacto" class="nav-cta" aria-label="Ir a Contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO SLIDER -->
     <section class="hero" id="inicio">
-        <div class="container">
-            <h2>Protección, Servicio y Valor</h2>
-            <p>El Heroico Cuerpo de Bomberos de Tapachula está comprometido con la seguridad de nuestra comunidad. Más de XX años sirviendo con honor, valentía y dedicación.</p>
-            
-            <!-- MODIFICADO: ahora es "Llamar ahora" con enlace telefónico -->
-            <a href="tel:911" class="emergency-hero">
-                <i class="fas fa-phone-alt"></i> Llamar ahora
-            </a>
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('fondoB.png')"></div>
+            <div class="hero-slide" style="background-image: url('fondoB.png'); filter: hue-rotate(10deg)"></div>
+            <div class="hero-slide" style="background-image: url('fondoB.png'); filter: brightness(0.85)"></div>
         </div>
-    </section>
-
-    <!-- Sección Servicios -->
-    <section id="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Extinción de Incendios</h3>
-                    <p>Combate y control de incendios urbanos, forestales e industriales con equipo especializado y personal altamente capacitado.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-ambulance"></i>
-                    </div>
-                    <h3>Rescate y Atención Médica</h3>
-                    <p>Atención pre-hospitalaria en accidentes de tránsito, emergencias médicas y rescates con paramédicos certificados.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-car-crash"></i>
-                    </div>
-                    <h3>Rescate Vehicular</h3>
-                    <p>Liberación de víctimas atrapadas en vehículos mediante técnicas de excarcelación con herramientas de alta potencia.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-radiation-alt"></i>
-                    </div>
-                    <h3>Materiales Peligrosos</h3>
-                    <p>Contención y manejo inicial de derrames de sustancias químicas o peligrosas que amenacen a la comunidad.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3>Control de Inundaciones</h3>
-                    <p>Bombeo de agua, remoción de escombros y apoyo a la población durante la temporada de lluvias intensas.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Capacitación y Prevención</h3>
-                    <p>Charlas, cursos y simulacros en empresas, escuelas y comunidades para fomentar la cultura de la prevención.</p>
-                </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <div class="hero-badge">RESCATE · PREVENCIÓN · SERVICIO</div>
+            <h1 class="hero-title">Heroico Cuerpo de<br><span>Bomberos Tapachula</span></h1>
+            <p class="hero-sub">Protegiendo vidas y el patrimonio de nuestra comunidad<br>con honor, valentía y entrega total.</p>
+            <div class="hero-actions">
+                <a href="tel:911" class="btn-emergency"><i class="fas fa-phone-alt"></i> Emergencia: 911</a>
+                <a href="#nosotros" class="btn-secondary">Conoce más <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </div>
+        <div class="hero-slider-dots" id="sliderDots">
+            <button class="dot active" data-idx="0"></button>
+            <button class="dot" data-idx="1"></button>
+            <button class="dot" data-idx="2"></button>
+        </div>
+        <div class="hero-number-banner">
+            <div class="container">
+                <i class="fas fa-phone-volume"></i>
+                <span>Números de Emergencia:</span>
+                <strong>911</strong>
+                <span class="sep-v">|</span>
+                <strong>(962) 625-2065</strong>
             </div>
         </div>
     </section>
 
-    <!-- Sección Estructura -->
-    <section id="estructura" class="team-section">
-        <div class="container">
-            <h2 class="section-title">Nuestra Estructura</h2>
-            <div class="team-container">
-                <div class="team-card">
-                    <div class="team-img">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Comandancia</h3>
-                        <p>Máxima autoridad operativa. Dirige y coordina todas las actividades del cuerpo de bomberos.</p>
-                    </div>
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="nosotros-section">
+        <div class="container nosotros-grid">
+            <div class="nosotros-img">
+                <img src="fondoB.png" alt="Bomberos Tapachula en acción">
+                <div class="nosotros-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Sirviendo a Tapachula</span>
                 </div>
-                
-                <div class="team-card">
-                    <div class="team-img">
-                        <i class="fas fa-users"></i>
+            </div>
+            <div class="nosotros-text">
+                <h2 class="section-title left">Nosotros</h2>
+                <p>El Heroico Cuerpo de Bomberos de Tapachula trabaja día a día para proteger a los habitantes de nuestra ciudad y sus alrededores. Con personal altamente capacitado y equipo moderno, respondemos ante cualquier emergencia con rapidez y profesionalismo.</p>
+                <p>Nuestro compromiso va más allá de apagar incendios: brindamos atención médica prehospitalaria, rescate técnico y educación preventiva para toda la comunidad, en corresponsabilidad con autoridades y ciudadanía.</p>
+                <div class="nosotros-stats">
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>Disponibilidad</span>
                     </div>
-                    <div class="team-info">
-                        <h3>Bomberos Operativos</h3>
-                        <p>El corazón de la institución. Personal capacitado en todas las áreas de emergencia y respuesta.</p>
+                    <div class="stat">
+                        <strong>365</strong>
+                        <span>Días al año</span>
                     </div>
-                </div>
-                
-                <div class="team-card">
-                    <div class="team-img">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Paramédicos y TUM</h3>
-                        <p>Especialistas en atención pre-hospitalaria, estabilización y traslado de pacientes en emergencia.</p>
-                    </div>
-                </div>
-                
-                <div class="team-card">
-                    <div class="team-img">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Unidad de Rescate</h3>
-                        <p>Equipo con entrenamiento especializado en técnicas de rescate técnico en diversas situaciones.</p>
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Compromiso</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: Voluntariado -->
-    <section id="voluntariado" class="team-section" style="background-color: white;">
+    <!-- ESTADÍSTICAS ANIMADAS -->
+    <section class="stats-section" aria-label="Estadísticas del cuerpo de bomberos">
+        <div class="container stats-grid">
+            <div class="stat-item" data-target="1200" data-suffix="+">
+                <div class="stat-icon"><i class="fas fa-fire-extinguisher" aria-hidden="true"></i></div>
+                <div class="stat-number" id="stat-emergencias">0</div>
+                <div class="stat-label">Emergencias atendidas</div>
+            </div>
+            <div class="stat-item" data-target="25" data-suffix="">
+                <div class="stat-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                <div class="stat-number" id="stat-bomberos">0</div>
+                <div class="stat-label">Bomberos activos</div>
+            </div>
+            <div class="stat-item" data-target="3" data-suffix="">
+                <div class="stat-icon"><i class="fas fa-truck" aria-hidden="true"></i></div>
+                <div class="stat-number" id="stat-unidades">0</div>
+                <div class="stat-label">Unidades operativas</div>
+            </div>
+            <div class="stat-item" data-target="365" data-suffix="">
+                <div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                <div class="stat-number" id="stat-dias">0</div>
+                <div class="stat-label">Días al año disponibles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="servicios-section">
         <div class="container">
-            <h2 class="section-title">Voluntariado</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hands-helping"></i>
+            <h2 class="section-title centered">Atención Ciudadana</h2>
+            <p class="section-sub">Servicios especializados para proteger a la comunidad de Tapachula</p>
+
+            <div class="servicios-grid">
+                <!-- Incendios Estructurales -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Bombero combatiendo incendio estructural" loading="lazy">
+                        <div class="servicio-overlay"></div>
                     </div>
-                    <h3>Únete a Nuestro Equipo</h3>
-                    <p>El Heroico Cuerpo de Bomberos de Tapachula te invita a formar parte de nuestra familia como voluntario. Ayuda a tu comunidad y aprende habilidades de rescate y primeros auxilios.</p>
+                    <div class="servicio-info">
+                        <i class="fas fa-fire-alt" aria-hidden="true"></i>
+                        <h3>Incendios Estructurales</h3>
+                    </div>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <!-- Fugas de Gas LP -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Atención a fuga de gas LP" loading="lazy">
+                        <div class="servicio-overlay"></div>
                     </div>
-                    <h3>Requisitos</h3>
-                    <p>• Ser mayor de 18 años<br>• Disponibilidad de tiempo<br>• Actitud de servicio<br>• Examen médico básico<br>• Curso de inducción</p>
+                    <div class="servicio-info">
+                        <i class="fas fa-wind" aria-hidden="true"></i>
+                        <h3>Fugas de Gas LP</h3>
+                    </div>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-phone-alt"></i>
+                <!-- Incendios Forestales -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=600&q=80" alt="Combate de incendio forestal" loading="lazy">
+                        <div class="servicio-overlay"></div>
                     </div>
-                    <h3>Contacto Voluntariado</h3>
-                    <p>Para más información, comunícate al teléfono directo o visítanos en nuestras instalaciones. ¡Te esperamos!</p>
-                    <p style="margin-top: 15px;"><strong>(962) 625-2065</strong></p>
+                    <div class="servicio-info">
+                        <i class="fas fa-tree" aria-hidden="true"></i>
+                        <h3>Incendios Forestales</h3>
+                    </div>
+                </div>
+                <!-- Labores de Rescate -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=600&q=80" alt="Labores de rescate de personas" loading="lazy">
+                        <div class="servicio-overlay"></div>
+                    </div>
+                    <div class="servicio-info">
+                        <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                        <h3>Labores de Rescate</h3>
+                    </div>
+                </div>
+                <!-- Control de Inundaciones -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?w=600&q=80" alt="Control de inundaciones y bombeo de agua" loading="lazy">
+                        <div class="servicio-overlay"></div>
+                    </div>
+                    <div class="servicio-info">
+                        <i class="fas fa-water" aria-hidden="true"></i>
+                        <h3>Control de Inundaciones</h3>
+                    </div>
+                </div>
+                <!-- Capacitación y Prevención -->
+                <div class="servicio-card">
+                    <div class="servicio-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Capacitación y prevención a la comunidad" loading="lazy">
+                        <div class="servicio-overlay"></div>
+                    </div>
+                    <div class="servicio-info">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h3>Capacitación y Prevención</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="otros-servicios">
+                <h3>Otros Servicios</h3>
+                <p>Servicios que presentan riesgo para la población y de no ser atendidos pueden originar emergencias mayores:</p>
+                <ul class="otros-list">
+                    <li><i class="fas fa-check-circle"></i> Derrames de fluidos y sustancias con posibles riesgos a la salud</li>
+                    <li><i class="fas fa-check-circle"></i> Servicio social de suministro de agua en épocas de desabasto</li>
+                    <li><i class="fas fa-check-circle"></i> Prevención mediante capacitación interna y externa</li>
+                    <li><i class="fas fa-check-circle"></i> Rescate vehicular y atención de accidentes de tránsito</li>
+                </ul>
+                <a href="#contacto" class="btn-red">Ver más información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="galeria-section">
+        <div class="container">
+            <h2 class="section-title centered light">Nuestra Galería</h2>
+            <p class="section-sub light">Momentos que reflejan nuestro compromiso con Tapachula</p>
+            <div class="galeria-grid">
+                <div class="galeria-item tall">
+                    <img src="fondoB.png" alt="Bomberos en acción">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="galeria-item">
+                    <img src="fondoB.png" alt="Emergencia" style="filter:brightness(0.85)">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="galeria-item">
+                    <img src="fondoB.png" alt="Rescate" style="filter:saturate(1.2)">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="galeria-item wide">
+                    <img src="fondoB.png" alt="Capacitación" style="filter:hue-rotate(10deg)">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="galeria-item">
+                    <img src="fondoB.png" alt="Equipos" style="filter:brightness(0.9)">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="galeria-item">
+                    <img src="fondoB.png" alt="Comunidad" style="filter:saturate(0.9)">
+                    <div class="galeria-hover"><i class="fas fa-search-plus"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto">
+    <!-- EMERGENCIAS BANNER -->
+    <div class="emergency-banner">
+        <div class="container emergency-banner-inner">
+            <div class="eb-left">
+                <i class="fas fa-phone-volume"></i>
+                <div>
+                    <strong>Llama a nuestros Números de Emergencia</strong>
+                    <span>Disponibles las 24 horas, los 365 días del año</span>
+                </div>
+            </div>
+            <div class="eb-numbers">
+                <a href="tel:911">911</a>
+                <span>|</span>
+                <a href="tel:9626252065">(962) 625-2065</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- VOLUNTARIADO -->
+    <section id="voluntariado" class="voluntariado-section">
+        <div class="container voluntariado-grid">
+            <div class="voluntariado-text">
+                <h2 class="section-title left">¿Conoces jóvenes que quieran ser Voluntarios?</h2>
+                <p>El Heroico Cuerpo de Bomberos de Tapachula te invita a formar parte de nuestra familia. Aprende habilidades de rescate, primeros auxilios y contribuye al bienestar de tu comunidad.</p>
+                <ul class="vol-requisitos">
+                    <li><i class="fas fa-check"></i> Entrevista con el Comandante</li>
+                    <li><i class="fas fa-check"></i> Cumplir con 40 horas voluntarias al mes</li>
+                    <li><i class="fas fa-check"></i> Entregar documentación de identificación</li>
+                    <li><i class="fas fa-check"></i> Examen médico básico</li>
+                    <li><i class="fas fa-check"></i> Cumplir con entrenamiento especial</li>
+                    <li><i class="fas fa-check"></i> Ser mayor de 18 años</li>
+                </ul>
+                <a href="tel:9626252065" class="btn-red"><i class="fas fa-phone-alt"></i> Contactar: (962) 625-2065</a>
+            </div>
+            <div class="voluntariado-img">
+                <img src="voluntariados.png" alt="Voluntarios Bomberos Tapachula">
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTACIONES -->
+    <section id="estaciones" class="estaciones-section">
         <div class="container">
-            <h2 class="section-title">Contacto e Información</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+            <h2 class="section-title centered">Nuestra Estación</h2>
+            <div class="estaciones-content">
+                <div class="estacion-panel active" id="est1">
+                    <div class="estacion-grid">
+                        <div class="estacion-info">
+                            <div class="estacion-badge"><i class="fas fa-fire-extinguisher"></i> Estación Central</div>
+                            <h3>Estación Central</h3>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</li>
+                                <li><i class="fas fa-phone"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
+                                <li><i class="fas fa-clock"></i> Operativa 24 horas, 365 días</li>
+                            </ul>
                         </div>
-                        <div class="contact-details">
+                        <div class="estacion-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.605566964619!2d-92.2724105250075!3d14.903318085619734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e0fac7f644d93%3A0xadf84f4d44cb55e4!2sHer%C3%B3ico%20Cuerpo%20de%20Bomberos!5e0!3m2!1ses-419!2smx!4v1769454422051!5m2!1ses-419!2smx"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                title="Estación Central Bomberos Tapachula">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONACIONES -->
+    <section id="donaciones" class="donaciones-section">
+        <div class="container donaciones-grid">
+            <div class="donaciones-text">
+                <h2 class="section-title left light">Tu donación marca la diferencia</h2>
+                <p>Tu apoyo económico al Heroico Cuerpo de Bomberos de Tapachula nos permite mantener y reparar unidades, adquirir herramientas, combustible, material de curación y equipos necesarios para responder mejor ante emergencias.</p>
+                <h4>Necesidades Urgentes:</h4>
+                <ul class="dona-list">
+                    <li><i class="fas fa-wrench"></i> Reparación y mantenimiento de unidades</li>
+                    <li><i class="fas fa-gas-pump"></i> Combustible y lubricantes</li>
+                    <li><i class="fas fa-toolbox"></i> Herramienta menor y equipo especializado</li>
+                    <li><i class="fas fa-first-aid"></i> Material de curación y desinfección</li>
+                    <li><i class="fas fa-tshirt"></i> Equipo de protección personal</li>
+                </ul>
+            </div>
+            <div class="donaciones-metodos">
+                <h3>Haz tu donación ahora</h3>
+                <div class="dona-opciones">
+                    <button class="dona-btn" onclick="document.getElementById('modal-transferencia').style.display='flex'">
+                        <i class="fas fa-university"></i>
+                        <span>Transferencia Bancaria</span>
+                    </button>
+                    <button class="dona-btn" onclick="document.getElementById('modal-oxxo').style.display='flex'">
+                        <i class="fas fa-store"></i>
+                        <span>Depósito en OXXO</span>
+                    </button>
+                    <button class="dona-btn" onclick="document.getElementById('modal-efectivo').style.display='flex'">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>En persona / Efectivo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICIAS -->
+    <section id="noticias" class="noticias-section">
+        <div class="container">
+            <h2 class="section-title centered">Noticias</h2>
+            <p class="section-sub">Mantente informado sobre las actividades del Heroico Cuerpo de Bomberos de Tapachula</p>
+            <div class="noticias-grid">
+
+                <!-- NOTICIA DESTACADA — la más reciente -->
+                <article class="noticia-card featured">
+                    <div class="noticia-img-wrap">
+                        <img src="noti1.jpg" alt="Desfile Expo Feria Tapachula 2026" loading="lazy">
+                        <div class="noticia-overlay"></div>
+                        <span class="noticia-tag">Comunidad</span>
+                    </div>
+                    <div class="noticia-body">
+                        <div class="noticia-meta">
+                            <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 05 · Mar · 2026</span>
+                            <span><i class="fas fa-tag" aria-hidden="true"></i> Evento</span>
+                        </div>
+                        <h3>Desfile Expo Feria Tapachula 2026</h3>
+                        <p>Estuvimos presentes en este hermoso desfile y fue un honor convivir con cada una de las familias tapachultecas que presenciaban este magno evento.</p>
+                        <div class="noticia-hashtags">
+                            <span>#PorElHonorDeServir</span>
+                        </div>
+                        <a href="https://www.facebook.com/OficialBomberosTap" target="_blank" rel="noopener noreferrer" class="noticia-link" aria-label="Ver noticia completa en Facebook">Ver en Facebook <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+
+                <div class="noticias-side">
+
+                    <!-- NOTICIA 2 -->
+                    <article class="noticia-card small">
+                        <div class="noticia-img-wrap">
+                            <img src="noti2.jpg" alt="Club Bomberitos visita jardín de niños" loading="lazy">
+                            <div class="noticia-overlay"></div>
+                            <span class="noticia-tag">Prevención</span>
+                        </div>
+                        <div class="noticia-body">
+                            <div class="noticia-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 04 · Mar · 2026</span>
+                            </div>
+                            <h3>¡Respondiendo al llamado! Jardín de niños "Amalia González Caballero"</h3>
+                            <p>Compartimos tips de prevención y diversión con los pequeños implementando el programa #ClubBomberitos #BomberitoPorUnDia.</p>
+                            <a href="https://www.facebook.com/OficialBomberosTap" target="_blank" rel="noopener noreferrer" class="noticia-link">Ver en Facebook <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 3 -->
+                    <article class="noticia-card small">
+                        <div class="noticia-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Incendio en 18 Oriente y C. Tabachines" loading="lazy">
+                            <div class="noticia-overlay"></div>
+                            <span class="noticia-tag">Emergencia</span>
+                        </div>
+                        <div class="noticia-body">
+                            <div class="noticia-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 25 · Feb · 2026</span>
+                            </div>
+                            <h3>Incendio en 18 Oriente y C. Tabachines sofocado</h3>
+                            <p>El reporte de un operador de taxi activó nuestro protocolo de respuesta. Llegamos rápidamente a sofocar el incendio.</p>
+                            <a href="https://www.facebook.com/OficialBomberosTap" target="_blank" rel="noopener noreferrer" class="noticia-link">Ver en Facebook <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 4 -->
+                    <article class="noticia-card small">
+                        <div class="noticia-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=80" alt="Incendio en colonia Raymundo Enríquez" loading="lazy">
+                            <div class="noticia-overlay"></div>
+                            <span class="noticia-tag">Emergencia</span>
+                        </div>
+                        <div class="noticia-body">
+                            <div class="noticia-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 19 · Feb · 2026</span>
+                            </div>
+                            <h3>Incendio en casa, col. Raymundo Enríquez</h3>
+                            <p>Se incendió una casa cerca de la Prepa No. 6. Trabajamos de manera coordinada para sofocar el incendio a tiempo.</p>
+                            <a href="https://www.facebook.com/OficialBomberosTap" target="_blank" rel="noopener noreferrer" class="noticia-link">Ver en Facebook <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+            <div class="noticias-footer-link">
+                <a href="https://www.facebook.com/OficialBomberosTap" class="btn-red" target="_blank" rel="noopener noreferrer" aria-label="Ver todas las noticias en Facebook oficial">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i> Ver más noticias en Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUCTURA -->
+    <section id="estructura" class="estructura-section">
+        <div class="container">
+            <h2 class="section-title centered">Nuestra Estructura</h2>
+            <div class="estructura-grid">
+                <div class="estructura-card">
+                    <div class="ec-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Comandancia</h3>
+                    <p>Máxima autoridad operativa. Dirige y coordina todas las actividades del cuerpo de bomberos.</p>
+                </div>
+                <div class="estructura-card">
+                    <div class="ec-icon"><i class="fas fa-users"></i></div>
+                    <h3>Bomberos Operativos</h3>
+                    <p>El corazón de la institución. Personal capacitado en todas las áreas de emergencia y respuesta.</p>
+                </div>
+                <div class="estructura-card">
+                    <div class="ec-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Paramédicos y TUM</h3>
+                    <p>Especialistas en atención prehospitalaria, estabilización y traslado de pacientes.</p>
+                </div>
+                <div class="estructura-card">
+                    <div class="ec-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Unidad de Rescate</h3>
+                    <p>Equipo con entrenamiento especializado en técnicas de rescate técnico en diversas situaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <h2 class="section-title centered">Contacto</h2>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
                             <h4>Emergencias</h4>
-                            <p>Llama al <strong><a href="tel:911" style="color: #D32F2F; text-decoration: none;">911</a></strong> las 24 horas del día, los 365 días del año</p>
+                            <p>Llama al <strong><a href="tel:911">911</a></strong> — disponible 24/7</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
+                    <div class="contacto-item">
+                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                        <div>
                             <h4>Teléfono Directo</h4>
-                            <p><strong><a href="tel:9626252065" style="color: #333; text-decoration: none;">(962) 625-2065</a></strong> - Para información general</p>
+                            <p><a href="tel:9626252065">(962) 625-2065</a> — información general</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                    <div class="contacto-item">
+                        <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Octava Sur S/N, Los Naranjos, San Sebastián<br>30700 Tapachula de Córdova y Ordóñez, Chiapas</p>
                         </div>
-                       <div class="contact-details">
-                        <h4>Dirección Central</h4>
-                        <p><strong>Heroico Cuerpo de Bomberos de Tapachula</strong></p>
-                        <p style="margin: 8px 0; line-height: 1.4;">
-                            Octava Sur S/N<br>
-                            Los Naranjos, San Sebastián<br>
-                            30700 Tapachula de Córdova y Ordóñez, Chiapas
-                        </p>
-                        <small style="color: #666;">
-                            <i class="fas fa-landmark"></i> Colonia San Sebastián, cerca del mercado
-                        </small>
                     </div>
-                </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
+                    <div class="contacto-item">
+                        <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                        <div>
                             <h4>Horario de Oficina</h4>
-                            <p><strong>Lunes a Viernes:</strong> 8:00 AM - 6:00 PM<br>
-                            <strong>Sábados:</strong> 9:00 AM - 1:00 PM</p>
-                            <small>Para emergencias, estamos disponibles 24/7</small>
+                            <p><strong>Lun – Vie:</strong> 8:00 AM – 6:00 PM<br><strong>Sáb:</strong> 9:00 AM – 1:00 PM</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.605566964619!2d-92.2724105250075!3d14.903318085619734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e0fac7f644d93%3A0xadf84f4d44cb55e4!2sHer%C3%B3ico%20Cuerpo%20de%20Bomberos!5e0!3m2!1ses-419!2smx!4v1769454422051!5m2!1ses-419!2smx" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Ubicación del Heroico Cuerpo de Bomberos de Tapachula">
+                <div class="contacto-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.605566964619!2d-92.2724105250075!3d14.903318085619734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e0fac7f644d93%3A0xadf84f4d44cb55e4!2sHer%C3%B3ico%20Cuerpo%20de%20Bomberos!5e0!3m2!1ses-419!2smx!4v1769454422051!5m2!1ses-419!2smx"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        title="Ubicación Bomberos Tapachula">
                     </iframe>
+                    <a href="https://www.google.com/maps/dir//Octava+Sur+S%2FN,+Tapachula" target="_blank" class="directions-btn">
+                        <i class="fas fa-directions"></i> Cómo llegar
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- CONSEJOS DE PREVENCIÓN -->
+    <section id="prevencion" class="prevencion-section" aria-labelledby="prevencion-titulo">
+        <div class="container">
+            <h2 class="section-title centered" id="prevencion-titulo">Consejos de Prevención</h2>
+            <p class="section-sub">Conoce qué hacer antes, durante y después de una emergencia</p>
+
+            <div class="prevencion-tabs" role="tablist" aria-label="Tipos de emergencia">
+                <button class="ptab active" data-panel="incendio" role="tab" aria-selected="true" aria-controls="panel-incendio">
+                    <i class="fas fa-fire" aria-hidden="true"></i> Incendio
+                </button>
+                <button class="ptab" data-panel="gas" role="tab" aria-selected="false" aria-controls="panel-gas">
+                    <i class="fas fa-wind" aria-hidden="true"></i> Fuga de Gas
+                </button>
+                <button class="ptab" data-panel="sismo" role="tab" aria-selected="false" aria-controls="panel-sismo">
+                    <i class="fas fa-house-damage" aria-hidden="true"></i> Sismo
+                </button>
+                <button class="ptab" data-panel="inundacion" role="tab" aria-selected="false" aria-controls="panel-inundacion">
+                    <i class="fas fa-water" aria-hidden="true"></i> Inundación
+                </button>
+                <button class="ptab" data-panel="accidente" role="tab" aria-selected="false" aria-controls="panel-accidente">
+                    <i class="fas fa-car-crash" aria-hidden="true"></i> Accidente Vial
+                </button>
+            </div>
+
+            <div class="prevencion-panels">
+
+                <div class="prev-panel active" id="panel-incendio" role="tabpanel" aria-labelledby="tab-incendio">
+                    <div class="prev-grid">
+                        <div class="prev-col">
+                            <h3><span class="prev-num">Antes</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Instala detectores de humo en cada habitación y pruébalos mensualmente.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ten un extintor en casa y aprende a usarlo (PASS: jalar, apuntar, presionar, barrer).</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Elabora un plan de evacuación familiar con rutas de salida y punto de encuentro.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> No sobrecargues los enchufes eléctricos ni uses cables dañados.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num durante">Durante</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Mantén la calma y activa la alarma de incendio inmediatamente.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Sal agachado si hay humo, cúbrete nariz y boca con tela húmeda.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Toca las puertas antes de abrirlas; si están calientes, no las abras.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> en cuanto estés en un lugar seguro.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num despues">Después</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No regreses al inmueble hasta que los bomberos lo autoricen.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Documenta los daños con fotografías para el seguro.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Revisa la instalación eléctrica antes de reconectar energía.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Busca apoyo psicológico si tú o tu familia lo necesitan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prev-panel" id="panel-gas" role="tabpanel" aria-labelledby="tab-gas">
+                    <div class="prev-grid">
+                        <div class="prev-col">
+                            <h3><span class="prev-num">Antes</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Revisa mangueras y conexiones del tanque de gas cada 6 meses.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Instala el tanque en un lugar ventilado y alejado de fuentes de calor.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Usa solo mangueras y reguladores certificados y en buen estado.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Cierra la llave del gas al salir de casa o al dormir.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num durante">Durante</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No enciendas luces, interruptores ni uses el teléfono dentro del inmueble.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Cierra la llave del gas y abre puertas y ventanas para ventilar.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Evacúa inmediatamente a todos del lugar.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> desde el exterior del inmueble.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num despues">Después</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No entres hasta que los bomberos revisen y autoricen el ingreso.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Solicita revisión de la instalación a un técnico certificado.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Reporta a la distribuidora de gas cualquier anomalía detectada.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prev-panel" id="panel-sismo" role="tabpanel" aria-labelledby="tab-sismo">
+                    <div class="prev-grid">
+                        <div class="prev-col">
+                            <h3><span class="prev-num">Antes</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Identifica zonas de seguridad y rutas de evacuación en tu hogar y trabajo.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prepara un kit de emergencia: agua, comida, botiquín, linterna y radio.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ancla muebles altos y asegura objetos que puedan caer.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Realiza simulacros con tu familia al menos dos veces al año.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num durante">Durante</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Aléjate de ventanas, espejos y objetos que puedan caer.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Aplica la posición de protección: agáchate, cúbrete y agárrate.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No uses elevadores ni corras por las escaleras durante el movimiento.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Si estás afuera, aléjate de edificios, postes y cables eléctricos.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num despues">Después</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Revisa si hay heridos y brinda primeros auxilios básicos.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Verifica fugas de gas o daños eléctricos antes de habitar el inmueble.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Mantente informado por radio oficial sobre réplicas y alertas.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No difundas rumores; usa solo fuentes oficiales de información.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prev-panel" id="panel-inundacion" role="tabpanel" aria-labelledby="tab-inundacion">
+                    <div class="prev-grid">
+                        <div class="prev-col">
+                            <h3><span class="prev-num">Antes</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Conoce si tu colonia está en zona de riesgo por inundaciones.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Limpia coladeras y canaletas antes de la temporada de lluvias.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ten documentos importantes en bolsas herméticas y en un lugar accesible.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prepara una mochila de emergencia con agua, alimentos y medicamentos.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num durante">Durante</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No cruces corrientes de agua aunque parezcan poco profundas.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Desconecta aparatos eléctricos y sube los objetos de valor.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Evacúa si las autoridades lo indican; no esperes a que suba el agua.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> si necesitas ayuda para evacuar.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num despues">Después</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No consumas agua de la llave hasta confirmar que es potable.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Limpia y desinfecta todas las superficies que estuvieron en contacto con el agua.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Reporta daños a las autoridades municipales correspondientes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prev-panel" id="panel-accidente" role="tabpanel" aria-labelledby="tab-accidente">
+                    <div class="prev-grid">
+                        <div class="prev-col">
+                            <h3><span class="prev-num">Antes</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Respeta los límites de velocidad y las señales de tránsito.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Nunca manejes bajo efectos del alcohol, drogas o con sueño.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Usa siempre el cinturón de seguridad y sillas para niños.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Mantén tu vehículo en buen estado: frenos, llantas y luces.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num durante">Durante</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> inmediatamente e indica ubicación exacta.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No muevas a los heridos a menos que haya riesgo de incendio.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Señaliza el área para prevenir más accidentes.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Si hay heridos conscientes, mantente con ellos y dales seguridad.</li>
+                            </ul>
+                        </div>
+                        <div class="prev-col">
+                            <h3><span class="prev-num despues">Después</span></h3>
+                            <ul class="prev-list">
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Coopera con los servicios de emergencia al llegar.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Intercambia datos del seguro con los involucrados.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Presenta denuncia ante las autoridades de tránsito correspondientes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="prevencion-cta">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <p>Ante cualquier emergencia, llama de inmediato al <strong>911</strong> o al <a href="tel:9626252065">(962) 625-2065</a>. Estamos disponibles las 24 horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                       <div class="footer-logo-placeholder" style="background: white; padding: 5px;">
-            <img src="logoB.png" 
-                 alt="Logo Heroico Cuerpo de Bomberos de Tapachula"
-                 style="width: 80%; height: 80%; object-fit: contain; border-radius: 50%;">
-                        </div>
-                        <div>
-                            <h3>Bomberos Tapachula</h3>
-                            <p>Serviendo con honor desde 19XX</p>
-                        </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="logoB.png" alt="Logo Bomberos Tapachula">
                     </div>
-                    <p>El Heroico Cuerpo de Bomberos de Tapachula está comprometido con la protección de vidas, patrimonio y medio ambiente de nuestra comunidad.</p>
+                    <div>
+                        <h3>Bomberos Tapachula</h3>
+                        <p>Serviendo con honor y valentía</p>
+                    </div>
+                    <p class="footer-desc">El Heroico Cuerpo de Bomberos de Tapachula está comprometido con la protección de vidas, patrimonio y medio ambiente de nuestra comunidad.</p>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Enlaces Rápidos</h4>
+
+                <div class="footer-col">
+                    <h4>Estación Central</h4>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#estructura">Nuestra Estructura</a></li>
-                        <li><a href="#voluntariado">Voluntariado</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</li>
                     </ul>
                 </div>
-                
-                <div class="footer-social">
+
+                <div class="footer-col">
                     <h4>Síguenos</h4>
-                    <p>Mantente informado sobre nuestras actividades y consejos de seguridad.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/OficialBomberosTap" aria-label="Facebook oficial" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/529626252065" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     </div>
-                    <p style="margin-top: 15px; font-size: 0.9rem;">Consulta las redes sociales oficiales del Cuerpo de Bomberos</p>
+                    <div class="footer-links">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#servicios">Servicios</a>
+                        <a href="#galeria">Galería</a>
+                        <a href="#voluntariado">Voluntariado</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="copyright">
+
+            <div class="footer-bottom">
                 <p>© <span id="currentYear"></span> Heroico Cuerpo de Bomberos de Tapachula, Chiapas. Todos los derechos reservados.</p>
-                <p>Esta es una página informativa. Para emergencias, marca al <strong>911</strong>.</p>
+                <p>Para emergencias, marca al <strong>911</strong>.</p>
             </div>
         </div>
     </footer>
+
+    <!-- MODALES DONACIONES -->
+    <div class="modal" id="modal-transferencia">
+        <div class="modal-box">
+            <button class="modal-close" onclick="document.getElementById('modal-transferencia').style.display='none'">&times;</button>
+            <h3><i class="fas fa-university"></i> Transferencia Bancaria</h3>
+            <p><strong>Titular:</strong> Heroico Cuerpo de Bomberos de Tapachula</p>
+            <p><strong>Número de cuenta:</strong> XXXX-XXXX-XXXX-XXXX</p>
+            <p><strong>CLABE:</strong> XXX XXX XXXXXXXXXX XX</p>
+            <small>Actualiza estos datos con la información bancaria oficial.</small>
+        </div>
+    </div>
+    <div class="modal" id="modal-oxxo">
+        <div class="modal-box">
+            <button class="modal-close" onclick="document.getElementById('modal-oxxo').style.display='none'">&times;</button>
+            <h3><i class="fas fa-store"></i> Depósito en OXXO</h3>
+            <p><strong>Número de tarjeta / referencia:</strong> XXXX XXXX XXXX XXXX</p>
+            <small>Acude a cualquier tienda OXXO y realiza el depósito con el número de referencia.</small>
+        </div>
+    </div>
+    <div class="modal" id="modal-efectivo">
+        <div class="modal-box">
+            <button class="modal-close" onclick="document.getElementById('modal-efectivo').style.display='none'">&times;</button>
+            <h3><i class="fas fa-hand-holding-usd"></i> Donación en Persona</h3>
+            <p>Visítanos en nuestras instalaciones y entrega tu donación directamente.</p>
+            <p><strong>Dirección:</strong> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</p>
+            <p><strong>Horario:</strong> Lun–Vie 8:00–18:00 | Sáb 9:00–13:00</p>
+        </div>
+    </div>
+
+    <!-- BARRA LATERAL FLOTANTE -->
+    <div class="floating-sidebar" id="floatingSidebar" role="complementary" aria-label="Contacto rápido">
+        <a href="tel:9626252065" class="fsb-item phone" aria-label="Llamar al 962 625-2065">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span class="fsb-tooltip">962 625-2065</span>
+        </a>
+        <a href="tel:911" class="fsb-item phone" aria-label="Llamar a emergencias 911">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span class="fsb-tooltip">Emergencias 911</span>
+        </a>
+        <div class="fsb-divider" role="separator"></div>
+        <a href="https://www.facebook.com/OficialBomberosTap" class="fsb-item facebook" aria-label="Visitar Facebook oficial" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            <span class="fsb-tooltip">Facebook</span>
+        </a>
+        <a href="https://wa.me/529626252065" class="fsb-item whatsapp" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="fsb-tooltip">WhatsApp</span>
+        </a>
+        <a href="#" class="fsb-item instagram" aria-label="Visitar Instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span class="fsb-tooltip">Instagram</span>
+        </a>
+        <a href="#" class="fsb-item twitter" aria-label="Visitar Twitter / X" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+            <span class="fsb-tooltip">Twitter / X</span>
+        </a>
+    </div>
+
+    <!-- CHATBOT FLOTANTE -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <!-- Botón toggle -->
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir asistente virtual de Bomberos Tapachula">
+            <div class="chatbot-icon-wrap">
+                <!-- Casco de bombero SVG -->
+                <svg class="icon-extintor" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="24" cy="24" r="24" fill="#C62828"/>
+                    <!-- Ala del casco -->
+                    <path d="M9 30 Q24 28 39 30 L37 33 Q24 31 11 33 Z" fill="#FFB300"/>
+                    <!-- Cuerpo principal del casco -->
+                    <path d="M13 30 Q12 20 24 16 Q36 20 35 30 Z" fill="white"/>
+                    <!-- Frente del casco (visera delantera) -->
+                    <path d="M13 30 Q13 26 24 24 Q35 26 35 30" fill="#e8e8e8"/>
+                    <!-- Insignia/escudo frontal -->
+                    <rect x="21" y="22" width="6" height="5" rx="1" fill="#FFB300"/>
+                    <path d="M21 22 L24 20 L27 22 Z" fill="#FFB300"/>
+                    <!-- Cruz pequeña en la insignia -->
+                    <rect x="23.5" y="23" width="1" height="3" fill="#C62828"/>
+                    <rect x="22.5" y="24" width="3" height="1" fill="#C62828"/>
+                    <!-- Línea de unión casco -->
+                    <path d="M15 28 Q24 26 33 28" stroke="#ddd" stroke-width="0.8" fill="none"/>
+                </svg>
+                <span class="chatbot-badge" id="chatbotBadge" aria-label="1 mensaje nuevo">1</span>
+            </div>
+            <span class="chatbot-label">Asistente</span>
+        </button>
+
+        <!-- Ventana de chat -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ala -->
+                            <path d="M5 21 Q16 19 27 21 L26 23 Q16 21 6 23 Z" fill="#FFB300"/>
+                            <!-- Cuerpo casco -->
+                            <path d="M8 21 Q8 13 16 10 Q24 13 24 21 Z" fill="white"/>
+                            <!-- Visera -->
+                            <path d="M8 21 Q8 18 16 16 Q24 18 24 21" fill="#e0e0e0"/>
+                            <!-- Insignia -->
+                            <rect x="14" y="15" width="4" height="3.5" rx="0.5" fill="#FFB300"/>
+                            <path d="M14 15 L16 13.5 L18 15 Z" fill="#FFB300"/>
+                            <rect x="15.5" y="15.5" width="1" height="2" fill="#C62828"/>
+                            <rect x="14.8" y="16.2" width="2.4" height="0.8" fill="#C62828"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <strong>Asistente Bomberos</strong>
+                        <span>Tapachula · En línea</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Cerrar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-msg bot">
+                    <div class="chat-bubble">
+                        👋 ¡Hola! Soy el asistente del <strong>Heroico Cuerpo de Bomberos de Tapachula</strong>.<br><br>¿En qué te puedo ayudar hoy?
+                    </div>
+                    <span class="chat-time">Ahora</span>
+                </div>
+                <div class="chat-options" id="chatOptions">
+                    <p class="options-label">Selecciona una pregunta:</p>
+                    <button class="chat-option-btn" data-q="emergencia">🚨 ¿Cómo reportar una emergencia?</button>
+                    <button class="chat-option-btn" data-q="telefono">📞 ¿Cuáles son sus teléfonos?</button>
+                    <button class="chat-option-btn" data-q="ubicacion">📍 ¿Dónde están ubicados?</button>
+                    <button class="chat-option-btn" data-q="servicios">🔥 ¿Qué servicios ofrecen?</button>
+                    <button class="chat-option-btn" data-q="voluntariado">🙋 ¿Cómo ser voluntario?</button>
+                    <button class="chat-option-btn" data-q="horario">🕐 ¿Cuál es su horario?</button>
+                    <button class="chat-option-btn" data-q="donacion">❤️ ¿Cómo puedo donar?</button>
+                </div>
+            </div>
+
+            <div class="chatbot-input-bar">
+                <button class="chat-reset-btn" id="chatReset" title="Reiniciar">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+                <span class="chat-input-hint">Selecciona una opción arriba</span>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
