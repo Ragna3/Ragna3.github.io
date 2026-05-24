@@ -26,13 +26,17 @@
     --font-body: 'Source Sans 3', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
 body {
     font-family: var(--font-body);
     color: var(--black);
     line-height: 1.65;
     background: var(--white);
+    overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -68,11 +72,16 @@ header {
     background: var(--red);
     color: #fff;
     padding: 0.75rem 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 999;
     box-shadow: 0 3px 12px rgba(0,0,0,0.35);
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.35s ease;
+}
+header.header-hidden {
+    transform: translateY(-100%);
 }
 header.scrolled {
     background: rgba(140, 0, 0, 0.97);
@@ -1058,7 +1067,7 @@ footer {
     .emergency-bar { display: none; }
 
     /* Header — menú hamburguesa */
-    header { position: sticky; top: 0; }
+    header { position: fixed; top: 0; }
     .menu-toggle { display: flex; }
 
     /* Overlay oscuro detrás del menú */
@@ -1333,10 +1342,10 @@ nav#mainNav {
     .dona-btn { font-size: 0.88rem; padding: 13px 16px; }
 
     /* Chatbot */
-    .chatbot-container { bottom: 16px; right: 12px; }
+    .chatbot-container { bottom: 16px; right: 12px; align-items: flex-end; }
     .chatbot-window { width: calc(100vw - 24px); max-height: 480px; }
     .chatbot-label { display: none; }
-    .chatbot-toggle { padding: 0 12px 0 8px; border-radius: 50px; }
+    .chatbot-toggle { padding: 0 12px 0 8px; border-radius: 50px; align-self: flex-end; }
 
     /* Footer */
     .footer-social { justify-content: flex-start; }
@@ -1360,6 +1369,7 @@ nav#mainNav {
 .noticias-section {
     padding: 90px 0;
     background: var(--white);
+    overflow-x: hidden;
 }
 
 .noticias-grid {
@@ -4429,4 +4439,114 @@ nav#mainNav {
 .nav-social { display: none; }
 @media (max-width: 768px) {
     .nav-social { display: block; }
+}
+/* =============================================
+   NOTICIAS: SOLO EN MÓVIL - Mismo diseño para todas
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* Forzar que todas las noticias usen el formato grande */
+    .noticias-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    
+    /* Convertir las noticias pequeñas al mismo estilo que la destacada */
+    .noticia-card.small {
+        display: block !important;
+        width: 100% !important;
+        background: white !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        box-shadow: 0 6px 28px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Imagen a ancho completo (como la noticia grande) */
+    .noticia-card.small .noticia-img-wrap {
+        width: 100% !important;
+        height: 200px !important;
+        min-height: auto !important;
+        position: relative !important;
+    }
+    
+    .noticia-card.small .noticia-img-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* Eliminar el grid de 2 columnas de las pequeñas */
+    .noticia-card.small .noticia-body {
+        padding: 20px !important;
+    }
+    
+    .noticia-card.small h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .noticia-card.small p {
+        font-size: 0.9rem !important;
+        margin-bottom: 12px !important;
+        display: block !important;
+    }
+    
+    /* Ocultar el contenedor lateral que las organizaba */
+    .noticias-side {
+        display: block !important;
+    }
+}
+
+/* =============================================
+   SERVICIOS PAGE — items con icono y descripción
+   ============================================= */
+.svc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+.svc-item:hover {
+    box-shadow: 0 4px 18px rgba(198,40,40,0.1);
+    transform: translateY(-2px);
+    border-color: rgba(198,40,40,0.2);
+}
+.svc-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(198,40,40,0.25);
+}
+.svc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+.svc-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.svc-desc {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.5;
+    margin: 0;
+}
+@media (max-width: 480px) {
+    .svc-icon { width: 36px; height: 36px; min-width: 36px; font-size: 0.95rem; }
+    .svc-desc { font-size: 0.78rem; }
 }
