@@ -73,7 +73,10 @@ menuToggle.addEventListener('click', () => {
 });
 navOverlay.addEventListener('click', closeMenu);
 document.querySelectorAll('#mainNav a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+    // No cerrar el menú al clickear links que tienen dropdown
+    if (!link.closest('.has-dropdown') || link.closest('.dropdown')) {
+        link.addEventListener('click', closeMenu);
+    }
 });
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMenu();
@@ -416,3 +419,183 @@ if (emgFab && emgOverlay && emgClose) {
         }
     });
 }
+/* ============ DROPDOWN MENÚ ============ */
+document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Si el menú hamburguesa está visible, estamos en móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const isMobile = menuToggle && getComputedStyle(menuToggle).display !== 'none';
+        if (isMobile) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parent = this.parentElement;
+            const isOpen = parent.classList.contains('open');
+            document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) parent.classList.add('open');
+        }
+    });
+});
+// Cerrar dropdown al hacer click fuera (solo desktop)
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.has-dropdown')) {
+        document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
+    }
+});
+/* ================================================
+   TIEMPO DE RESPUESTA — Geolocalización real
+   ================================================ */
+
+// Coordenadas de la Estación Central de Bomberos Tapachula
+const STATION = { lat: 14.909252, lng: -92.263682 };
+
+function openResponseModal() {
+    document.getElementById('rtOverlay').classList.add('active');
+    document.getElementById('rtModal').classList.add('active');
+    showState('init');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeResponseModal() {
+    document.getElementById('rtOverlay').classList.remove('active');
+    document.getElementById('rtModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function resetResponseModal() {
+    showState('init');
+}
+
+function showState(state) {
+    const states = ['Init', 'Loading', 'Result', 'Error'];
+    states.forEach(s => {
+        const el = document.getElementById('rtState' + s);
+        if (el) el.classList.add('rt-hidden');
+    });
+    const target = document.getElementById('rtState' + state.charAt(0).toUpperCase() + state.slice(1));
+    if (target) target.classList.remove('rt-hidden');
+}
+
+function requestLocation() {
+    if (!navigator.geolocation) {
+        showError('Tu navegador no soporta geolocalización. Intenta desde Chrome o Safari.');
+        return;
+    }
+    showState('loading');
+    document.getElementById('rtLoadingText').textContent = 'Obteniendo tu ubicación...';
+
+    navigator.geolocation.getCurrentPosition(
+        function(pos) {
+            const userLat = pos.coords.latitude;
+            const userLng = pos.coords.longitude;
+            document.getElementById('rtLoadingText').textContent = 'Calculando ruta...';
+            calculateRoute(userLat, userLng);
+        },
+        function(err) {
+            let msg = 'No pudimos obtener tu ubicación.';
+            if (err.code === 1) msg = 'Permiso de ubicación denegado. Por favor permite el acceso en tu navegador.';
+            if (err.code === 2) msg = 'No se pudo determinar tu ubicación. Verifica tu conexión GPS.';
+            if (err.code === 3) msg = 'La solicitud de ubicación tardó demasiado. Intenta de nuevo.';
+            showError(msg);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
+}
+
+function calculateRoute(userLat, userLng) {
+    const R = 6371;
+    const dLat = (userLat - STATION.lat) * Math.PI / 180;
+    const dLng = (userLng - STATION.lng) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(STATION.lat * Math.PI / 180) * Math.cos(userLat * Math.PI / 180) *
+              Math.sin(dLng/2) * Math.sin(dLng/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const straightDist = R * c;
+
+    const apiKey = '5b3ce3597851110001cf624847a551cb7e474c4da7d97a2ed2fb8fbd';
+    const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${STATION.lng},${STATION.lat}&end=${userLng},${userLat}`;
+
+    fetch(url)
+        .then(res => { if (!res.ok) throw new Error('API error'); return res.json(); })
+        .then(data => {
+            const segment = data.features[0].properties.segments[0];
+            const distKm = (segment.distance / 1000).toFixed(1);
+            const durationMin = Math.ceil(segment.duration / 60);
+            showResult(distKm, durationMin, false);
+        })
+        .catch(() => {
+            const distKm = (straightDist * 1.35).toFixed(1);
+            const durationMin = Math.ceil((straightDist * 1.35) / 35 * 60);
+            showResult(distKm, durationMin, true);
+        });
+}
+
+function animateTruck(durationMin) {
+    const truck = document.getElementById('rtTruck');
+    const line = truck.parentElement;
+    if (!truck || !line) return;
+
+    // Resetear posición
+    truck.style.transition = 'none';
+    truck.style.left = '0px';
+    truck.classList.remove('arrived');
+
+    // Duración de la animación: máximo 4s, mínimo 1.5s para que se vea bien
+    const animDuration = Math.min(Math.max(durationMin * 0.3, 1.5), 4);
+    const lineWidth = line.offsetWidth - 28;
+
+    // Forzar reflow para que el reset aplique antes de arrancar
+    truck.getBoundingClientRect();
+
+    truck.style.transition = `left ${animDuration}s cubic-bezier(0.4, 0, 0.2, 1)`;
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            truck.style.left = lineWidth + 'px';
+            // Al llegar, cambiar a verde
+            setTimeout(() => {
+                truck.classList.add('arrived');
+            }, animDuration * 1000);
+        });
+    });
+}
+
+function showResult(distKm, durationMin, isFallback) {
+    document.getElementById('rtDistance').textContent = distKm + ' km';
+    document.getElementById('rtTime').textContent = '~' + durationMin + ' min';
+
+    const msg = document.getElementById('rtMessage');
+    let text = '';
+    let cls = '';
+
+    if (durationMin <= 5) {
+        text = '✅ Los bomberos pueden llegar a tu ubicación en aproximadamente <strong>' + durationMin + ' minutos</strong>. Cobertura excelente.';
+        cls = '';
+    } else if (durationMin <= 10) {
+        text = '⚠️ Tiempo de llegada estimado: <strong>' + durationMin + ' minutos</strong>. Cobertura aceptable para tu zona.';
+        cls = 'rt-msg-warn';
+    } else {
+        text = '🚨 Tu ubicación está a <strong>' + durationMin + ' minutos</strong>. Si hay emergencia, llama al <strong>911</strong> de inmediato.';
+        cls = 'rt-msg-far';
+    }
+
+    if (isFallback) {
+        text += '<br><small style="opacity:0.7">*Estimación aproximada por distancia directa.</small>';
+    }
+
+    msg.innerHTML = text;
+    msg.className = 'rt-message' + (cls ? ' ' + cls : '');
+
+    showState('result');
+
+    // Arrancar animación del camión sincronizada con el resultado
+    requestAnimationFrame(() => animateTruck(durationMin));
+}
+
+function showError(message) {
+    document.getElementById('rtErrorText').textContent = message;
+    showState('error');
+}
+
+// Cerrar con Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeResponseModal();
+});

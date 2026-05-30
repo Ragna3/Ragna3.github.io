@@ -20,7 +20,7 @@
         <div class="container emergency-bar-inner">
             <span><i class="fas fa-exclamation-triangle"></i> EMERGENCIAS: Llama al <a href="tel:911">911</a></span>
             <span class="sep">|</span>
-            <span><i class="fas fa-phone"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
+            <span><i class="fas fa-phone-alt"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
             <span class="sep">|</span>
             <span><i class="fas fa-clock"></i> Servicio 24/7 los 365 días</span>
         </div>
@@ -44,13 +44,26 @@
             <nav id="mainNav" role="navigation" aria-label="Menú principal">
                 <ul role="list">
                     <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li class="has-dropdown">
+                        <a href="index.html#nosotros" aria-haspopup="true">Nosotros <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></a>
+                        <ul class="dropdown" role="list">
+                            <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+                            <li><a href="organigrama.html">Organigrama</a></li>
+                            <li><a href="index.html#galeria">Galería</a></li>
+                            <li><a href="index.html#estaciones">Estaciones</a></li>
+                            <li><a href="index.html#noticias">Noticias</a></li>
+                        </ul>
+                    </li>
                     <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="index.html#galeria">Galería</a></li>
-                    <li><a href="index.html#voluntariado">Voluntariado</a></li>
-                    <li><a href="index.html#estaciones">Estaciones</a></li>
-                    <li><a href="index.html#noticias">Noticias</a></li>
-                    <li><a href="index.html#prevencion">Prevención</a></li>
+                    <li class="has-dropdown">
+                        <a href="index.html#voluntariado" aria-haspopup="true">Comunidad <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></a>
+                        <ul class="dropdown" role="list">
+                            <li><a href="index.html#voluntariado">Voluntariado</a></li>
+                            <li><a href="index.html#empresas">Empresas Solidarias</a></li>
+                            <li><a href="index.html#prevencion">Prevención</a></li>
+                            <li><a href="bomberitos.html">Club Bomberitos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="index.html#contacto" class="nav-cta">Contacto</a></li>
                 </ul>
             </nav>
@@ -135,21 +148,21 @@
                 <p>Con el apoyo de padres de familia y la comunidad seguimos llevando este proyecto a más estudiantes, fortaleciendo la cultura de prevención en Tapachula.</p>
                 <div class="bom-phones">
                     <a href="tel:9626252065" class="bom-phone-item" aria-label="Línea directa 962 625-2065">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         <div>
                             <span class="bom-phone-label">Línea directa</span>
                             <span class="bom-phone-num">962 625-2065</span>
                         </div>
                     </a>
                     <a href="tel:9622122086" class="bom-phone-item" aria-label="Más información Club Bomberitos 962 212-2086">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         <div>
                             <span class="bom-phone-label">Más información</span>
                             <span class="bom-phone-num">962 212-2086</span>
                         </div>
                     </a>
                     <a href="tel:9626285454" class="bom-phone-item" aria-label="Más información Club Bomberitos 962 628-5454">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         <div>
                             <span class="bom-phone-label">Más información</span>
                             <span class="bom-phone-num">962 628-5454</span>
@@ -189,7 +202,7 @@
                 <div class="footer-col">
                     <h4>Estación Central</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</li>
                     </ul>
                 </div>
@@ -351,8 +364,9 @@
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
                     <div class="emg-warning-text">
-                        <strong>⚠️ Solo emergencias reales</strong>
-                            <p>Las llamadas falsas son un <strong style="display:inline;">delito</strong> y pueden retrasar la atención a quienes realmente la necesitan. Las llamadas falsas serán reportadas a las autoridades.</p>                    </div>
+                        <strong>🚨 Advertencia — Solo emergencias reales</strong>
+                        <p>Las <em>llamadas falsas son un delito</em> penado con prisión y multa. Toda llamada es grabada y reportada a las autoridades competentes.</p>
+                    </div>
                 </div>
                 <p class="emg-available">
                     <i class="fas fa-clock" aria-hidden="true"></i> Disponibles 24/7 · 365 días del año

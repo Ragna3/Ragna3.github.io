@@ -106,7 +106,7 @@
         <div class="container emergency-bar-inner">
             <span><i class="fas fa-exclamation-triangle"></i> EMERGENCIAS: Llama al <a href="tel:911">911</a></span>
             <span class="sep">|</span>
-            <span><i class="fas fa-phone"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
+            <span><i class="fas fa-phone-alt"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
             <span class="sep">|</span>
             <span><i class="fas fa-clock"></i> Servicio 24/7 los 365 días</span>
         </div>
@@ -132,15 +132,28 @@
             <nav id="mainNav" role="navigation" aria-label="Menú principal">
                 <ul role="list">
                     <li><a href="#inicio" aria-label="Ir a Inicio">Inicio</a></li>
-                    <li><a href="#nosotros" aria-label="Ir a Nosotros">Nosotros</a></li>
+                    <li class="has-dropdown">
+                        <a href="#nosotros" aria-label="Ir a Nosotros" aria-haspopup="true">Nosotros <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></a>
+                        <ul class="dropdown" role="list">
+                            <li><a href="#nosotros">Quiénes Somos</a></li>
+                            <li><a href="organigrama.html">Organigrama</a></li>
+                            <li><a href="#galeria">Galería</a></li>
+                            <li><a href="#estaciones">Estaciones</a></li>
+                            <li><a href="#noticias">Noticias</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#servicios" aria-label="Ir a Servicios">Servicios</a></li>
-                    <li><a href="#galeria" aria-label="Ir a Galería">Galería</a></li>
-                    <li><a href="#voluntariado" aria-label="Ir a Voluntariado">Voluntariado</a></li>
-                    <li><a href="#empresas" aria-label="Ir a Empresas Solidarias">Empresas</a></li>
-                    <li><a href="#estaciones" aria-label="Ir a Estaciones">Estaciones</a></li>
-                    <li><a href="#noticias" aria-label="Ir a Noticias">Noticias</a></li>
-                    <li><a href="#prevencion" aria-label="Ir a Consejos de Prevención">Prevención</a></li>
-                    <li><a href="#contacto" class="nav-cta" aria-label="Ir a Contacto">Contacto</a></li>
+                    <li class="has-dropdown">
+                        <a href="#voluntariado" aria-label="Comunidad" aria-haspopup="true">Comunidad <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></a>
+                        <ul class="dropdown" role="list">
+                            <li><a href="#voluntariado">Voluntariado</a></li>
+                            <li><a href="#empresas">Empresas Solidarias</a></li>
+                            <li><a href="#prevencion">Prevención</a></li>
+                            <li><a href="bomberitos.html">Club Bomberitos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Contacto en móvil drawer -->
+                    <li class="nav-cta-mobile"><a href="#contacto" class="nav-cta" aria-label="Ir a Contacto">Contacto</a></li>
                 </ul>
                 <!-- Redes sociales al fondo del drawer — solo móvil -->
                 <div class="nav-social">
@@ -158,6 +171,11 @@
                     </div>
                 </div>
             </nav>
+
+            <!-- Botón Contacto independiente — solo desktop -->
+            <div class="header-cta" aria-label="Ir a contacto">
+                <a href="#contacto">Contacto</a>
+            </div>
         </div>
     </header>
 
@@ -176,6 +194,9 @@
             <div class="hero-actions">
                 <a href="tel:911" class="btn-emergency"><i class="fas fa-phone-alt"></i> Emergencia: 911</a>
                 <a href="#nosotros" class="btn-secondary">Conoce más <i class="fas fa-arrow-down"></i></a>
+                <button class="btn-response-time" id="btnResponseTime" onclick="openResponseModal()">
+                    <i class="fas fa-stopwatch"></i> Tiempo de Respuesta
+                </button>
             </div>
         </div>
         <div class="hero-slider-dots" id="sliderDots">
@@ -185,7 +206,7 @@
         </div>
         <div class="hero-number-banner">
             <div class="container">
-                <i class="fas fa-phone-volume"></i>
+                <i class="fas fa-phone-volume" style="transform:scaleX(-1);display:inline-block;"></i>
                 <span>Números de Emergencia:</span>
                 <strong>911</strong>
                 <span class="sep-v">|</span>
@@ -394,7 +415,7 @@
     <div class="emergency-banner">
         <div class="container emergency-banner-inner">
             <div class="eb-left">
-                <i class="fas fa-phone-volume"></i>
+                <i class="fas fa-phone-volume" style="transform:scaleX(-1);display:inline-block;"></i>
                 <div>
                     <strong>Llama a nuestros Números de Emergencia</strong>
                     <span>Disponibles las 24 horas, los 365 días del año</span>
@@ -442,7 +463,7 @@
                             <h3>Estación Central</h3>
                             <ul>
                                 <li><i class="fas fa-map-marker-alt"></i> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</li>
-                                <li><i class="fas fa-phone"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
+                                <li><i class="fas fa-phone-alt"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
                                 <li><i class="fas fa-clock"></i> Operativa 24 horas, 365 días</li>
                             </ul>
                         </div>
@@ -686,7 +707,7 @@
 
                         <div class="ecta-contacto">
                             <a href="tel:9622122086" class="ecta-tel" aria-label="Llamar al 962 212-2086">
-                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                                 <div>
                                     <span class="ecta-tel-label">Llámanos</span>
                                     <span class="ecta-tel-num">962 212-2086</span>
@@ -760,7 +781,7 @@
                         </div>
                     </div>
                     <div class="contacto-item">
-                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                        <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
                         <div>
                             <h4>Teléfono Directo</h4>
                             <p><a href="tel:9626252065">(962) 625-2065</a> — información general</p>
@@ -826,28 +847,28 @@
                         <div class="prev-col">
                             <h3><span class="prev-num">Antes</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Instala detectores de humo en cada habitación y pruébalos mensualmente.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ten un extintor en casa y aprende a usarlo (PASS: jalar, apuntar, presionar, barrer).</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Elabora un plan de evacuación familiar con rutas de salida y punto de encuentro.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> No sobrecargues los enchufes eléctricos ni uses cables dañados.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Instala detectores de humo en cada habitación y pruébalos mensualmente.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Ten un extintor en casa y aprende a usarlo (PASS: jalar, apuntar, presionar, barrer).</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Elabora un plan de evacuación familiar con rutas de salida y punto de encuentro.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>No sobrecargues los enchufes eléctricos ni uses cables dañados.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num durante">Durante</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Mantén la calma y activa la alarma de incendio inmediatamente.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Sal agachado si hay humo, cúbrete nariz y boca con tela húmeda.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Toca las puertas antes de abrirlas; si están calientes, no las abras.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> en cuanto estés en un lugar seguro.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Mantén la calma y activa la alarma de incendio inmediatamente.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Sal agachado si hay humo, cúbrete nariz y boca con tela húmeda.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Toca las puertas antes de abrirlas; si están calientes, no las abras.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Llama al <strong>911</strong> en cuanto estés en un lugar seguro.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num despues">Después</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No regreses al inmueble hasta que los bomberos lo autoricen.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Documenta los daños con fotografías para el seguro.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Revisa la instalación eléctrica antes de reconectar energía.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Busca apoyo psicológico si tú o tu familia lo necesitan.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>No regreses al inmueble hasta que los bomberos lo autoricen.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Documenta los daños con fotografías para el seguro.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Revisa la instalación eléctrica antes de reconectar energía.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Busca apoyo psicológico si tú o tu familia lo necesitan.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -858,27 +879,27 @@
                         <div class="prev-col">
                             <h3><span class="prev-num">Antes</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Revisa mangueras y conexiones del tanque de gas cada 6 meses.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Instala el tanque en un lugar ventilado y alejado de fuentes de calor.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Usa solo mangueras y reguladores certificados y en buen estado.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Cierra la llave del gas al salir de casa o al dormir.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Revisa mangueras y conexiones del tanque de gas cada 6 meses.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Instala el tanque en un lugar ventilado y alejado de fuentes de calor.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Usa solo mangueras y reguladores certificados y en buen estado.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Cierra la llave del gas al salir de casa o al dormir.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num durante">Durante</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No enciendas luces, interruptores ni uses el teléfono dentro del inmueble.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Cierra la llave del gas y abre puertas y ventanas para ventilar.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Evacúa inmediatamente a todos del lugar.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> desde el exterior del inmueble.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>No enciendas luces, interruptores ni uses el teléfono dentro del inmueble.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Cierra la llave del gas y abre puertas y ventanas para ventilar.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Evacúa inmediatamente a todos del lugar.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Llama al <strong>911</strong> desde el exterior del inmueble.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num despues">Después</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No entres hasta que los bomberos revisen y autoricen el ingreso.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Solicita revisión de la instalación a un técnico certificado.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Reporta a la distribuidora de gas cualquier anomalía detectada.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>No entres hasta que los bomberos revisen y autoricen el ingreso.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Solicita revisión de la instalación a un técnico certificado.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Reporta a la distribuidora de gas cualquier anomalía detectada.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -889,28 +910,28 @@
                         <div class="prev-col">
                             <h3><span class="prev-num">Antes</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Identifica zonas de seguridad y rutas de evacuación en tu hogar y trabajo.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prepara un kit de emergencia: agua, comida, botiquín, linterna y radio.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ancla muebles altos y asegura objetos que puedan caer.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Realiza simulacros con tu familia al menos dos veces al año.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Identifica zonas de seguridad y rutas de evacuación en tu hogar y trabajo.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Prepara un kit de emergencia: agua, comida, botiquín, linterna y radio.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Ancla muebles altos y asegura objetos que puedan caer.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Realiza simulacros con tu familia al menos dos veces al año.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num durante">Durante</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Aléjate de ventanas, espejos y objetos que puedan caer.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Aplica la posición de protección: agáchate, cúbrete y agárrate.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No uses elevadores ni corras por las escaleras durante el movimiento.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Si estás afuera, aléjate de edificios, postes y cables eléctricos.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Aléjate de ventanas, espejos y objetos que puedan caer.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Aplica la posición de protección: agáchate, cúbrete y agárrate.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>No uses elevadores ni corras por las escaleras durante el movimiento.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Si estás afuera, aléjate de edificios, postes y cables eléctricos.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num despues">Después</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Revisa si hay heridos y brinda primeros auxilios básicos.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Verifica fugas de gas o daños eléctricos antes de habitar el inmueble.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Mantente informado por radio oficial sobre réplicas y alertas.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No difundas rumores; usa solo fuentes oficiales de información.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Revisa si hay heridos y brinda primeros auxilios básicos.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Verifica fugas de gas o daños eléctricos antes de habitar el inmueble.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Mantente informado por radio oficial sobre réplicas y alertas.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>No difundas rumores; usa solo fuentes oficiales de información.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -921,27 +942,27 @@
                         <div class="prev-col">
                             <h3><span class="prev-num">Antes</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Conoce si tu colonia está en zona de riesgo por inundaciones.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Limpia coladeras y canaletas antes de la temporada de lluvias.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ten documentos importantes en bolsas herméticas y en un lugar accesible.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prepara una mochila de emergencia con agua, alimentos y medicamentos.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Conoce si tu colonia está en zona de riesgo por inundaciones.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Limpia coladeras y canaletas antes de la temporada de lluvias.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Ten documentos importantes en bolsas herméticas y en un lugar accesible.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Prepara una mochila de emergencia con agua, alimentos y medicamentos.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num durante">Durante</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No cruces corrientes de agua aunque parezcan poco profundas.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Desconecta aparatos eléctricos y sube los objetos de valor.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Evacúa si las autoridades lo indican; no esperes a que suba el agua.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> si necesitas ayuda para evacuar.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>No cruces corrientes de agua aunque parezcan poco profundas.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Desconecta aparatos eléctricos y sube los objetos de valor.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Evacúa si las autoridades lo indican; no esperes a que suba el agua.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Llama al <strong>911</strong> si necesitas ayuda para evacuar.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num despues">Después</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> No consumas agua de la llave hasta confirmar que es potable.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Limpia y desinfecta todas las superficies que estuvieron en contacto con el agua.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Reporta daños a las autoridades municipales correspondientes.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>No consumas agua de la llave hasta confirmar que es potable.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Limpia y desinfecta todas las superficies que estuvieron en contacto con el agua.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Reporta daños a las autoridades municipales correspondientes.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -952,27 +973,27 @@
                         <div class="prev-col">
                             <h3><span class="prev-num">Antes</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Respeta los límites de velocidad y las señales de tránsito.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Nunca manejes bajo efectos del alcohol, drogas o con sueño.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Usa siempre el cinturón de seguridad y sillas para niños.</li>
-                                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Mantén tu vehículo en buen estado: frenos, llantas y luces.</li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Respeta los límites de velocidad y las señales de tránsito.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Nunca manejes bajo efectos del alcohol, drogas o con sueño.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Usa siempre el cinturón de seguridad y sillas para niños.</span></li>
+                                <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Mantén tu vehículo en buen estado: frenos, llantas y luces.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num durante">Durante</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Llama al <strong>911</strong> inmediatamente e indica ubicación exacta.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> No muevas a los heridos a menos que haya riesgo de incendio.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Señaliza el área para prevenir más accidentes.</li>
-                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Si hay heridos conscientes, mantente con ellos y dales seguridad.</li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Llama al <strong>911</strong> inmediatamente e indica ubicación exacta.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>No muevas a los heridos a menos que haya riesgo de incendio.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Señaliza el área para prevenir más accidentes.</span></li>
+                                <li><i class="fas fa-exclamation-circle" aria-hidden="true"></i><span>Si hay heridos conscientes, mantente con ellos y dales seguridad.</span></li>
                             </ul>
                         </div>
                         <div class="prev-col">
                             <h3><span class="prev-num despues">Después</span></h3>
                             <ul class="prev-list">
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Coopera con los servicios de emergencia al llegar.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Intercambia datos del seguro con los involucrados.</li>
-                                <li><i class="fas fa-info-circle" aria-hidden="true"></i> Presenta denuncia ante las autoridades de tránsito correspondientes.</li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Coopera con los servicios de emergencia al llegar.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Intercambia datos del seguro con los involucrados.</span></li>
+                                <li><i class="fas fa-info-circle" aria-hidden="true"></i><span>Presenta denuncia ante las autoridades de tránsito correspondientes.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -1005,7 +1026,7 @@
                 <div class="footer-col">
                     <h4>Estación Central</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
+<li><i class="fas fa-phone" style="transform:scaleX(-1);display:inline-block;"></i> <a href="tel:9626252065">(962) 625-2065</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Octava Sur S/N, Los Naranjos, San Sebastián, Tapachula, Chis.</li>
                     </ul>
                 </div>
@@ -1133,8 +1154,9 @@
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
                     <div class="emg-warning-text">
-                        <strong>⚠️ Solo emergencias reales</strong>
-                            <p>Las llamadas falsas son un <strong style="display:inline;">delito</strong> y pueden retrasar la atención a quienes realmente la necesitan. Las llamadas falsas serán reportadas a las autoridades.</p>                    </div>
+                        <strong>🚨 Advertencia — Solo emergencias reales</strong>
+                        <p>Las <em>llamadas falsas son un delito</em> penado con prisión y multa. Toda llamada es grabada y reportada a las autoridades competentes.</p>
+                    </div>
                 </div>
                 <p class="emg-available">
                     <i class="fas fa-clock" aria-hidden="true"></i> Disponibles 24/7 · 365 días del año
@@ -1229,6 +1251,98 @@
     </div>
 
     <script src="script.js"></script>
+
+
+    <!-- ===== MODAL TIEMPO DE RESPUESTA ===== -->
+    <div class="rt-overlay" id="rtOverlay" onclick="closeResponseModal()"></div>
+    <div class="rt-modal" id="rtModal" role="dialog" aria-modal="true" aria-labelledby="rtTitle">
+
+        <!-- Header -->
+        <div class="rt-header">
+            <div class="rt-header-icon"><i class="fas fa-stopwatch"></i></div>
+            <div>
+                <h2 id="rtTitle">Tiempo de Respuesta</h2>
+                <p>Calcula cuánto tardarían los bomberos en llegar</p>
+            </div>
+            <button class="rt-close" onclick="closeResponseModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Estado: inicial -->
+        <div class="rt-body" id="rtStateInit">
+            <div class="rt-station-info">
+                <div class="rt-station-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                <div>
+                    <strong>Estación Central</strong>
+                    <span>Heroico Cuerpo de Bomberos Tapachula</span>
+                </div>
+            </div>
+            <p class="rt-desc">Necesitamos acceder a tu ubicación para calcular la distancia y el tiempo estimado de llegada.</p>
+            <button class="rt-btn-locate" onclick="requestLocation()">
+                <i class="fas fa-location-arrow"></i> Usar mi ubicación
+            </button>
+        </div>
+
+        <!-- Estado: cargando -->
+        <div class="rt-body rt-hidden" id="rtStateLoading">
+            <div class="rt-loading-wrap">
+                <div class="rt-spinner"></div>
+                <p id="rtLoadingText">Obteniendo tu ubicación...</p>
+            </div>
+        </div>
+
+        <!-- Estado: resultado -->
+        <div class="rt-body rt-hidden" id="rtStateResult">
+            <!-- Ruta visual -->
+            <div class="rt-route-visual">
+                <div class="rt-point rt-point-origin">
+                    <div class="rt-point-icon rt-origin"><i class="fas fa-fire-extinguisher"></i></div>
+                    <span>Estación</span>
+                </div>
+                <div class="rt-route-line">
+                    <div class="rt-route-truck" id="rtTruck"><i class="fas fa-truck"></i></div>
+                </div>
+                <div class="rt-point rt-point-dest">
+                    <div class="rt-point-icon rt-dest"><i class="fas fa-map-marker-alt"></i></div>
+                    <span>Tu ubicación</span>
+                </div>
+            </div>
+
+            <!-- Métricas -->
+            <div class="rt-metrics">
+                <div class="rt-metric">
+                    <i class="fas fa-road"></i>
+                    <strong id="rtDistance">—</strong>
+                    <span>Distancia</span>
+                </div>
+                <div class="rt-metric">
+                    <i class="fas fa-clock"></i>
+                    <strong id="rtTime">—</strong>
+                    <span>Tiempo estimado</span>
+                </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="rt-message" id="rtMessage"></div>
+
+            <!-- Disclaimer -->
+            <p class="rt-disclaimer">⚠️ Este es un tiempo estimado. En caso de emergencia real llama al <strong>911</strong> de inmediato.</p>
+
+            <button class="rt-btn-reset" onclick="resetResponseModal()">
+                <i class="fas fa-redo"></i> Nueva simulación
+            </button>
+        </div>
+
+        <!-- Estado: error -->
+        <div class="rt-body rt-hidden" id="rtStateError">
+            <div class="rt-error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <p id="rtErrorText">No pudimos obtener tu ubicación.</p>
+            <button class="rt-btn-locate" onclick="requestLocation()">
+                <i class="fas fa-redo"></i> Intentar de nuevo
+            </button>
+        </div>
+
+    </div>
+    <!-- ===== FIN MODAL TIEMPO DE RESPUESTA ===== -->
 
 </body>
 </html>
