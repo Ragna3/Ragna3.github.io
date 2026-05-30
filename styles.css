@@ -3648,7 +3648,7 @@ nav#mainNav {
     position: relative;
     width: 46px;
     height: 46px;
-    background: #FFB300;
+    background: #dc2626;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3662,7 +3662,7 @@ nav#mainNav {
     transform: translateY(-50%) translateX(-6px);
     background: #1a1a1a;
     border: 1px solid rgba(255,179,0,0.3);
-    border-left: 4px solid #FFB300;
+    border-left: 4px solid #dc2626;
     color: #fff;
     font-size: 0.78rem;
     line-height: 1.5;
@@ -3925,7 +3925,7 @@ nav#mainNav {
 .em-awareness {
     background: #fffbf0;
     border: 1px solid rgba(255,179,0,0.3);
-    border-left: 4px solid #FFB300;
+    border-left: 4px solid #dc2626;
     border-radius: 0 10px 10px 0;
     padding: 14px 16px;
     display: flex;
@@ -3935,7 +3935,7 @@ nav#mainNav {
 .em-awareness-icon {
     width: 36px;
     height: 36px;
-    background: #FFB300;
+    background: #dc2626;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4218,7 +4218,7 @@ nav#mainNav {
 .emg-warning {
     display: flex;
     gap: 12px;
-    background: #0d0d0d;
+    background: #fff8e1;
     border: 1px solid rgba(220,38,38,0.5);
     border-left: 4px solid #dc2626;
     border-radius: 10px;
@@ -4243,18 +4243,18 @@ nav#mainNav {
     font-size: 0.84rem;
     color: #ff4444;
     margin-bottom: 6px;
-    font-weight: 700;
+    font-weight: 800;
 }
 .emg-warning-text p {
     font-size: 0.77rem;
-    color: #cccccc;
+    color: #5a3000;
     margin: 0;
     line-height: 1.55;
 }
 .emg-warning-text p em {
     color: #ff4444;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
 }
 .emg-available {
     text-align: center;

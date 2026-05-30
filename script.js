@@ -567,10 +567,10 @@ function showResult(distKm, durationMin, isFallback) {
     let cls = '';
 
     if (durationMin <= 5) {
-        text = '✅ Los bomberos pueden llegar a tu ubicación en aproximadamente <strong>' + durationMin + ' minutos</strong>. Cobertura excelente.';
+        text = ' Los bomberos pueden llegar a tu ubicación en aproximadamente <strong>' + durationMin + ' minutos</strong>. Cobertura excelente.';
         cls = '';
     } else if (durationMin <= 10) {
-        text = '⚠️ Tiempo de llegada estimado: <strong>' + durationMin + ' minutos</strong>. Cobertura aceptable para tu zona.';
+        text = ' Tiempo de llegada estimado: <strong>' + durationMin + ' minutos</strong>. Cobertura aceptable para tu zona.';
         cls = 'rt-msg-warn';
     } else {
         text = '🚨 Tu ubicación está a <strong>' + durationMin + ' minutos</strong>. Si hay emergencia, llama al <strong>911</strong> de inmediato.';
