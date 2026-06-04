@@ -67,6 +67,101 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+        const SUPABASE_URL = 'https://takvbfgphmbbpvgrcloe.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_99wRL790qhSQPg6erkD8Zw_soo3fQ7n';
+        const supabase     = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function loadNoticias() {
+            try {
+                const { data, error } = await supabase
+                    .from('noticias')
+                    .select('*')
+                    .order('created_at', { ascending: false })
+                    .limit(4);
+
+                if (error || !data || data.length === 0) return;
+
+                const grid = document.querySelector('.noticias-grid');
+                if (!grid) return;
+
+                // Separar destacada y el resto
+                const destacada = data.find(n => n.destacada) || data[0];
+                const resto     = data.filter(n => n.id !== destacada.id).slice(0, 3);
+
+                grid.innerHTML = renderFeatured(destacada);
+
+                if (resto.length > 0) {
+                    const side = document.createElement('div');
+                    side.className = 'noticias-side';
+                    resto.forEach(n => side.innerHTML += renderSmall(n));
+                    grid.appendChild(side);
+                }
+
+            } catch(e) {
+                console.warn('Noticias: usando contenido estático.', e.message);
+            }
+        }
+
+        function formatFecha(str) {
+            if (!str) return '';
+            try {
+                const [y, m, d] = str.split('-');
+                const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+                return `${d} · ${meses[parseInt(m)-1]} · ${y}`;
+            } catch { return str; }
+        }
+
+        function dec(str) {
+            const d = document.createElement('div');
+            d.innerHTML = str || '';
+            return d.textContent;
+        }
+
+        function renderFeatured(n) {
+            return `
+            <article class="noticia-card featured">
+                <div class="noticia-img-wrap">
+                    ${n.img_url ? `<img src="${n.img_url}" alt="${dec(n.titulo)}" loading="lazy">` : ''}
+                    <div class="noticia-overlay"></div>
+                    <span class="noticia-tag">${dec(n.categoria || 'Noticia')}</span>
+                </div>
+                <div class="noticia-body">
+                    <div class="noticia-meta">
+                        <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> ${formatFecha(n.fecha_str)}</span>
+                        <span><i class="fas fa-tag" aria-hidden="true"></i> ${dec(n.categoria || '')}</span>
+                    </div>
+                    <h3>${dec(n.titulo)}</h3>
+                    <p>${dec(n.resumen)}</p>
+                    ${n.hashtags ? `<div class="noticia-hashtags">${n.hashtags.split(',').map(h => `<span>${dec(h.trim())}</span>`).join('')}</div>` : ''}
+                    ${n.link ? `<a href="${n.link}" target="_blank" rel="noopener noreferrer" class="noticia-link">Ver más <i class="fab fa-facebook-f" aria-hidden="true"></i></a>` : ''}
+                </div>
+            </article>`;
+        }
+
+        function renderSmall(n) {
+            return `
+            <article class="noticia-card small">
+                <div class="noticia-img-wrap">
+                    ${n.img_url ? `<img src="${n.img_url}" alt="${dec(n.titulo)}" loading="lazy">` : ''}
+                    <div class="noticia-overlay"></div>
+                    <span class="noticia-tag">${dec(n.categoria || 'Noticia')}</span>
+                </div>
+                <div class="noticia-body">
+                    <div class="noticia-meta">
+                        <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> ${formatFecha(n.fecha_str)}</span>
+                    </div>
+                    <h3>${dec(n.titulo)}</h3>
+                    <p>${dec(n.resumen)}</p>
+                    ${n.link ? `<a href="${n.link}" target="_blank" rel="noopener noreferrer" class="noticia-link">Ver más <i class="fab fa-facebook-f" aria-hidden="true"></i></a>` : ''}
+                </div>
+            </article>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNoticias);
+    </script>
 </head>
 <body>
     <!-- ACCESIBILIDAD: saltar al contenido principal -->
@@ -446,7 +541,7 @@
                 <a href="tel:9626252065" class="btn-red"><i class="fas fa-phone-alt"></i> Contactar: (962) 625-2065</a>
             </div>
             <div class="voluntariado-img">
-                <img src="voluntarios.png" alt="Voluntarios Bomberos Tapachula">
+                <img src="voluntariosv2.jpg" alt="Voluntarios Bomberos Tapachula">
             </div>
         </div>
     </section>
@@ -519,7 +614,7 @@
     <section id="noticias" class="noticias-section">
         <div class="container">
             <h2 class="section-title centered">Noticias</h2>
-            <p class="section-sub">Mantente informado sobre las actividades del Heroico Cuerpo de Bomberos de Tapachula</p>
+            <p class="section-sub">Manténte informado sobre las actividades del Heroico Cuerpo de Bomberos de Tapachula</p>
             <div class="noticias-grid">
 
                 <!-- NOTICIA DESTACADA — la más reciente -->
