@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de | Heroico Cuerpo de Bomberos de Tapachula</title>
+    <meta name="description" content="Equipo de desarrollo del sitio web oficial del Heroico Cuerpo de Bomberos de Tapachula.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="img/logoB.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Hero ── */
+        .legal-hero {
+            background: linear-gradient(135deg, #B71C1C 0%, #7f0000 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: #fff;
+        }
+        .legal-hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .legal-hero p { font-size: 1rem; opacity: .8; }
+        .legal-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 18px;
+            font-size: .9rem;
+            opacity: .75;
+        }
+        .legal-breadcrumb a { color: #fff; text-decoration: none; }
+        .legal-breadcrumb a:hover { text-decoration: underline; }
+
+        /* ── Body ── */
+        .about-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* ── Intro ── */
+        .about-intro {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+        .about-intro h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: #222;
+            margin-bottom: 14px;
+        }
+        .about-intro p {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── Divider ── */
+        .about-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 44px;
+        }
+        .about-divider span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: #B71C1C;
+            white-space: nowrap;
+            letter-spacing: .5px;
+        }
+        .about-divider::before,
+        .about-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #f5c6c6);
+        }
+        .about-divider::after {
+            background: linear-gradient(to left, transparent, #f5c6c6);
+        }
+
+        /* ── Cards ── */
+        .dev-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-bottom: 56px;
+        }
+        .dev-card {
+            background: #fff;
+            border: 1px solid #f0dede;
+            border-radius: 16px;
+            padding: 36px 28px 28px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(183,28,28,0.07);
+            transition: transform .25s, box-shadow .25s;
+        }
+        .dev-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 32px rgba(183,28,28,0.13);
+        }
+
+        /* Avatar */
+        .dev-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C62828, #7f0000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 14px rgba(198,40,40,0.35);
+            position: relative;
+        }
+        .dev-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid #C62828;
+            opacity: .3;
+        }
+
+        .dev-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+        .dev-role {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .9rem;
+            color: #C62828;
+            font-weight: 600;
+            letter-spacing: .3px;
+            margin-bottom: 18px;
+        }
+        .dev-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 22px;
+        }
+        .dev-tag {
+            background: #fff3f3;
+            border: 1px solid #f5c6c6;
+            color: #B71C1C;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .78rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .dev-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .dev-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+        .dev-link--github {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .dev-link--github:hover { background: #333; }
+        .dev-link--disabled {
+            background: #f0f0f0;
+            color: #aaa;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* ── Site info ── */
+        .about-site {
+            background: #fff8f8;
+            border: 1px solid #f0dede;
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .about-site h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: #B71C1C;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+        .about-site-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .about-site-item span:first-child {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: #999;
+        }
+        .about-site-item span:last-child {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .95rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* ── Back btn ── */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #C62828;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: .5px;
+            transition: background .2s;
+        }
+        .back-btn:hover { background: #7f0000; }
+
+        @media (max-width: 480px) {
+            .about-site-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="emergency-bar">
+        <div class="container emergency-bar-inner">
+            <span><i class="fas fa-exclamation-triangle"></i> EMERGENCIAS: Llama al <a href="tel:911">911</a></span>
+            <span class="sep">|</span>
+            <span><i class="fas fa-phone"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="legal-hero">
+        <div class="container">
+            <div style="font-size:2.8rem; margin-bottom:16px;"><i class="fas fa-code"></i></div>
+            <h1>Acerca de</h1>
+            <p>Equipo de desarrollo del sitio web</p>
+            <div class="legal-breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right" style="font-size:.75rem;"></i>
+                <span>Acerca de</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="about-body">
+
+        <!-- Intro -->
+        <div class="about-intro">
+            <h2>Desarrollado con orgullo en Tapachula</h2>
+            <p>Este sitio web fue diseñado y desarrollado de forma voluntaria por estudiantes comprometidos con el servicio a la comunidad, con el objetivo de modernizar la presencia digital del <strong>Heroico Cuerpo de Bomberos de Tapachula</strong>.</p>
+        </div>
+
+        <!-- Equipo -->
+        <div class="about-divider"><span><i class="fas fa-users"></i> &nbsp;Equipo de Desarrollo</span></div>
+
+        <div class="dev-grid">
+
+            <!-- Gerardo -->
+            <div class="dev-card">
+                <div class="dev-avatar">GU</div>
+                <div class="dev-name">Gerardo Ulises López Sumoza</div>
+                <div class="dev-role">Desarrollo Frontend &amp; Backend</div>
+                <div class="dev-tags">
+                    <span class="dev-tag">HTML / CSS</span>
+                    <span class="dev-tag">JavaScript</span>
+                    <span class="dev-tag">UI Design</span>
+                    <span class="dev-tag">Backend</span>
+                </div>
+                <div class="dev-links">
+                    <a href="https://github.com/Ragna3?tab=repositories" target="_blank" rel="noopener" class="dev-link dev-link--github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rubén -->
+            <div class="dev-card">
+                <div class="dev-avatar">RC</div>
+                <div class="dev-name">Rubén Constantino Ramos</div>
+                <div class="dev-role">Desarrollo Backend</div>
+                <div class="dev-tags">
+                    <span class="dev-tag">Backend</span>
+                    <span class="dev-tag">Base de Datos</span>
+                    <span class="dev-tag">Supabase</span>
+                </div>
+                <div class="dev-links">
+                    <a class="dev-link dev-link--disabled">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Info del sitio -->
+        <div class="about-divider"><span><i class="fas fa-globe"></i> &nbsp;Sobre el Sitio</span></div>
+
+        <div class="about-site">
+            <h3><i class="fas fa-info-circle"></i> Ficha Técnica</h3>
+            <div class="about-site-grid">
+                <div class="about-site-item">
+                    <span>Versión</span>
+                    <span>1.0.0</span>
+                </div>
+                <div class="about-site-item">
+                    <span>Año</span>
+                    <span>2026</span>
+                </div>
+                <div class="about-site-item">
+                    <span>Tecnologías</span>
+                    <span>HTML, CSS, JavaScript</span>
+                </div>
+                <div class="about-site-item">
+                    <span>Base de datos</span>
+                    <span>Supabase</span>
+                </div>
+                <div class="about-site-item">
+                    <span>Institución</span>
+                    <span>H.C. Bomberos Tapachula</span>
+                </div>
+                <div class="about-site-item">
+                    <span>Uso</span>
+                    <span>Institucional / Público</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Heroico Cuerpo de Bomberos de Tapachula, Chiapas. Todos los derechos reservados.</p>
+                <p>Para emergencias, marca al <strong>911</strong>.</p>
+                <div class="footer-legal-links">
+                    <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+                    <a href="politica-cookies.html">Política de Cookies</a>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                    <a href="acerca-de.html">Acerca de</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

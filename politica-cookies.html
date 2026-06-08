@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | Heroico Cuerpo de Bomberos de Tapachula</title>
+    <meta name="description" content="Política de Cookies del Heroico Cuerpo de Bomberos de Tapachula.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="img/logoB.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-hero {
+            background: linear-gradient(135deg, #B71C1C 0%, #7f0000 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: #fff;
+        }
+        .legal-hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .legal-hero p { font-size: 1rem; opacity: .8; }
+        .legal-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 18px;
+            font-size: .9rem;
+            opacity: .75;
+        }
+        .legal-breadcrumb a { color: #fff; text-decoration: none; }
+        .legal-breadcrumb a:hover { text-decoration: underline; }
+        .legal-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .legal-body h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #B71C1C;
+            margin: 40px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fce4e4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-body p, .legal-body li {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+        .legal-body ul { padding-left: 20px; margin: 10px 0; }
+        .legal-body ul li { margin-bottom: 6px; }
+        .legal-update {
+            background: #fff3f3;
+            border-left: 4px solid #C62828;
+            padding: 14px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .95rem;
+            color: #555;
+        }
+        .legal-update strong { color: #B71C1C; }
+        /* Tabla de cookies */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: .9rem;
+        }
+        .cookie-table th {
+            background: #B71C1C;
+            color: #fff;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .cookie-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #f0e0e0;
+            color: #444;
+            vertical-align: top;
+        }
+        .cookie-table tr:nth-child(even) td { background: #fff8f8; }
+        .cookie-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-weight: 600;
+        }
+        .tag-tech { background: #e3f2fd; color: #1565c0; }
+        .tag-analytics { background: #fff9e6; color: #e65100; }
+
+        /* Tarjetas móvil — ocultas en desktop */
+        .cookie-cards { display: none; }
+
+        @media (max-width: 640px) {
+            .cookie-table--desktop { display: none; }
+            .cookie-cards { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+            .cookie-card {
+                background: #fff;
+                border: 1px solid #f0dede;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            }
+            .cookie-card__header {
+                background: #B71C1C;
+                color: #fff;
+                padding: 12px 16px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                font-family: 'Source Sans 3', sans-serif;
+                font-size: .95rem;
+                font-weight: 600;
+            }
+            .cookie-card__header code {
+                background: rgba(255,255,255,0.15);
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: .85rem;
+                color: #fff;
+            }
+            .cookie-card__header .cookie-tag {
+                flex-shrink: 0;
+                font-size: .75rem;
+            }
+            .cookie-card__row {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 16px;
+                border-bottom: 1px solid #fce4e4;
+                font-family: 'Source Sans 3', sans-serif;
+                font-size: .9rem;
+                color: #444;
+                line-height: 1.5;
+            }
+            .cookie-card__row:last-child { border-bottom: none; }
+            .cookie-card__label {
+                font-weight: 600;
+                color: #B71C1C;
+                font-size: .78rem;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                margin-bottom: 3px;
+            }
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: #C62828;
+            color: #fff;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: .5px;
+            transition: background .2s;
+        }
+        .back-btn:hover { background: #7f0000; }
+        .info-box {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+        .info-box p { margin: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="emergency-bar">
+        <div class="container emergency-bar-inner">
+            <span><i class="fas fa-exclamation-triangle"></i> EMERGENCIAS: Llama al <a href="tel:911">911</a></span>
+            <span class="sep">|</span>
+            <span><i class="fas fa-phone"></i> Directo: <a href="tel:9626252065">(962) 625-2065</a></span>
+        </div>
+    </div>
+
+    <div class="legal-hero">
+        <div class="container">
+            <div style="font-size:2.8rem; margin-bottom:16px;"><i class="fas fa-cookie-bite"></i></div>
+            <h1>Política de Cookies</h1>
+            <p>Heroico Cuerpo de Bomberos de Tapachula</p>
+            <div class="legal-breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right" style="font-size:.75rem;"></i>
+                <span>Política de Cookies</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="legal-body">
+
+        <div class="legal-update">
+            <strong>Última actualización:</strong> Junio de 2026
+        </div>
+
+        <p>Este sitio web pertenece al <strong>Heroico Cuerpo de Bomberos de Tapachula</strong>. La presente Política de Cookies explica qué son las cookies, cuáles utilizamos y cómo puedes controlarlas.</p>
+
+        <h2><i class="fas fa-question-circle"></i> 1. ¿Qué son las Cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (computadora, tablet o teléfono) cuando visitas un sitio web. Permiten que el sitio recuerde tus acciones y preferencias durante un período de tiempo, para que no tengas que volver a ingresarlas cada vez que visites el sitio o navegues de una página a otra.</p>
+
+        <h2><i class="fas fa-list"></i> 2. Tipos de Cookies que Utilizamos</h2>
+        <p>Nuestro sitio web utiliza únicamente cookies técnicas esenciales para su correcto funcionamiento. <strong>No utilizamos cookies de publicidad, rastreo de terceros ni perfilamiento de usuarios.</strong></p>
+
+        <!-- Tabla desktop -->
+        <table class="cookie-table cookie-table--desktop">
+            <thead>
+                <tr>
+                    <th>Cookie</th>
+                    <th>Tipo</th>
+                    <th>Finalidad</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>session_pref</code></td>
+                    <td><span class="cookie-tag tag-tech">Técnica</span></td>
+                    <td>Conserva preferencias de navegación durante la sesión (por ejemplo, la pestaña activa en Prevención).</td>
+                    <td>Sesión</td>
+                </tr>
+                <tr>
+                    <td><code>sb-*</code> (Supabase)</td>
+                    <td><span class="cookie-tag tag-tech">Técnica</span></td>
+                    <td>Conexión con la base de datos de noticias y estadísticas. No almacena datos personales identificables.</td>
+                    <td>Sesión</td>
+                </tr>
+                <tr>
+                    <td>Google Maps embed</td>
+                    <td><span class="cookie-tag tag-analytics">Tercero</span></td>
+                    <td>El mapa embebido de Google puede establecer sus propias cookies al interactuar con él. Consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de Google</a>.</td>
+                    <td>Variable</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tarjetas móvil -->
+        <div class="cookie-cards">
+            <div class="cookie-card">
+                <div class="cookie-card__header">
+                    <code>session_pref</code>
+                    <span class="cookie-tag tag-tech">Técnica</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Finalidad</span>
+                    <span>Conserva preferencias de navegación durante la sesión (por ejemplo, la pestaña activa en Prevención).</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Duración</span>
+                    <span>Sesión</span>
+                </div>
+            </div>
+            <div class="cookie-card">
+                <div class="cookie-card__header">
+                    <code>sb-*</code> (Supabase)
+                    <span class="cookie-tag tag-tech">Técnica</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Finalidad</span>
+                    <span>Conexión con la base de datos de noticias y estadísticas. No almacena datos personales identificables.</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Duración</span>
+                    <span>Sesión</span>
+                </div>
+            </div>
+            <div class="cookie-card">
+                <div class="cookie-card__header">
+                    Google Maps embed
+                    <span class="cookie-tag tag-analytics">Tercero</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Finalidad</span>
+                    <span>El mapa embebido de Google puede establecer sus propias cookies al interactuar con él. Consulta la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de Google</a>.</span>
+                </div>
+                <div class="cookie-card__row">
+                    <span class="cookie-card__label">Duración</span>
+                    <span>Variable</span>
+                </div>
+            </div>
+        </div>
+
+        <h2><i class="fas fa-sliders-h"></i> 3. Cómo Controlar las Cookies</h2>
+        <p>Puedes controlar y/o eliminar las cookies cuando lo desees. Puedes eliminar todas las cookies que ya están en tu dispositivo y configurar la mayoría de los navegadores para que no las acepten. Sin embargo, si lo haces, es posible que debas ajustar manualmente algunas preferencias cada vez que visites el sitio.</p>
+
+        <div class="info-box">
+            <p><strong>Instrucciones por navegador:</strong><br>
+            <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a> &nbsp;|&nbsp;
+            <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener">Mozilla Firefox</a> &nbsp;|&nbsp;
+            <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a> &nbsp;|&nbsp;
+            <a href="https://support.apple.com/es-mx/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></p>
+        </div>
+
+        <h2><i class="fas fa-bell"></i> 4. Actualizaciones a esta Política</h2>
+        <p>Podemos actualizar esta Política de Cookies ocasionalmente para reflejar cambios en las cookies que utilizamos o por otras razones operativas, legales o reglamentarias. Visita esta página regularmente para estar informado sobre nuestro uso de cookies.</p>
+
+        <h2><i class="fas fa-envelope"></i> 5. Contacto</h2>
+        <p>Si tienes preguntas sobre nuestra Política de Cookies, contáctanos en <a href="mailto:hcbomberosdetapachula@gmail.com">hcbomberosdetapachula@gmail.com</a> o al <a href="tel:9626252065">(962) 625-2065</a>.</p>
+        <p>Para más información sobre el tratamiento de datos, consulta nuestro <a href="aviso-privacidad.html">Aviso de Privacidad</a>.</p>
+
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,.1); padding-top:24px;">
+                <p>© <script>document.write(new Date().getFullYear())</script> Heroico Cuerpo de Bomberos de Tapachula, Chiapas. Todos los derechos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+                    <a href="politica-cookies.html">Política de Cookies</a>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                    <a href="acerca-de.html">Acerca de</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

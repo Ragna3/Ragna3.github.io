@@ -599,3 +599,66 @@ function showError(message) {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeResponseModal();
 });
+// ===== BANNER DE COOKIES =====
+(function() {
+    const COOKIE_KEY = 'bomberos_cookie_consent';
+
+    function getConsent() {
+        try { return localStorage.getItem(COOKIE_KEY); } catch(e) { return null; }
+    }
+    function setConsent(value) {
+        try { localStorage.setItem(COOKIE_KEY, value); } catch(e) {}
+    }
+
+    function removeBanner() {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+            banner.classList.add('cookie-banner--hide');
+            setTimeout(() => banner.remove(), 400);
+        }
+    }
+
+    function initBanner() {
+        if (getConsent()) return; // ya decidió antes
+
+        const banner = document.createElement('div');
+        banner.id = 'cookieBanner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Aviso de cookies');
+        banner.innerHTML = `
+            <div class="cookie-banner__inner">
+                <div class="cookie-banner__text">
+                    <i class="fas fa-cookie-bite cookie-banner__icon" aria-hidden="true"></i>
+                    <p>Usamos cookies técnicas para el funcionamiento del sitio (mapa, noticias). No usamos cookies de publicidad.
+                    <a href="politica-cookies.html">Más información</a>.</p>
+                </div>
+                <div class="cookie-banner__btns">
+                    <button id="cookieReject" class="cookie-btn cookie-btn--outline">Rechazar</button>
+                    <button id="cookieAccept" class="cookie-btn cookie-btn--solid">Aceptar</button>
+                </div>
+            </div>`;
+
+        document.body.appendChild(banner);
+
+        // Mostrar con pequeño delay para la animación
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => banner.classList.add('cookie-banner--show'));
+        });
+
+        document.getElementById('cookieAccept').addEventListener('click', function() {
+            setConsent('accepted');
+            removeBanner();
+        });
+        document.getElementById('cookieReject').addEventListener('click', function() {
+            setConsent('rejected');
+            removeBanner();
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBanner);
+    } else {
+        // Espera un momento para no competir con el preloader
+        setTimeout(initBanner, 1800);
+    }
+})();
