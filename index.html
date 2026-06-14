@@ -200,9 +200,57 @@
             }
         }
 
+        async function loadApp() {
+            try {
+                const { data, error } = await supabase
+                    .from('app_config')
+                    .select('*')
+                    .limit(1)
+                    .single();
+
+                if (error || !data || !data.visible) return;
+
+                const section = document.getElementById('app');
+                if (!section) return;
+
+                // Mostrar sección
+                section.style.display = '';
+
+                // Rellenar contenido
+                if (data.titulo)      document.getElementById('app-titulo').textContent      = data.titulo;
+                if (data.descripcion) document.getElementById('app-descripcion').textContent = data.descripcion;
+
+                const btnAndroid = document.getElementById('app-link-android');
+                const btnIos     = document.getElementById('app-link-ios');
+
+                if (data.link_android && data.link_android.trim()) {
+                    btnAndroid.href = data.link_android;
+                    btnAndroid.style.display = '';
+                } else {
+                    btnAndroid.style.display = 'none';
+                }
+
+                if (data.link_ios && data.link_ios.trim()) {
+                    btnIos.href = data.link_ios;
+                    btnIos.style.display = '';
+                } else {
+                    btnIos.style.display = 'none';
+                }
+
+                if (data.qr_url && data.qr_url.trim()) {
+                    document.getElementById('app-qr-img').src      = data.qr_url;
+                    document.getElementById('app-qr-wrap').style.display = '';
+                }
+
+            } catch(e) {
+                console.warn('App section: oculta.', e.message);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             loadNoticias();
             loadEstadisticas();
+            loadApp();
         });
     </script>
 </head>
@@ -741,6 +789,48 @@
                 <a href="https://www.facebook.com/OficialBomberosTap" class="btn-red" target="_blank" rel="noopener noreferrer" aria-label="Ver todas las noticias en Facebook oficial">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i> Ver más noticias en Facebook
                 </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- APP MÓVIL — oculta por defecto, se activa desde el panel admin -->
+    <section id="app" class="app-section" style="display:none">
+        <div class="container">
+            <div class="app-inner">
+
+                <!-- Texto -->
+                <div class="app-content">
+                    <span class="app-badge">Disponible ahora</span>
+                    <h2 class="section-title left" id="app-titulo">Bomberos Tapachula en tu bolsillo</h2>
+                    <p class="app-desc" id="app-descripcion">Descarga nuestra aplicación oficial y mantente conectado con el Heroico Cuerpo de Bomberos de Tapachula. Emergencias, noticias y más, desde tu celular.</p>
+
+                    <div class="app-buttons">
+                        <a id="app-link-android" href="#" target="_blank" rel="noopener noreferrer" class="app-store-btn android">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <span>Disponible en</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                        <a id="app-link-ios" href="#" target="_blank" rel="noopener noreferrer" class="app-store-btn ios">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <span>Disponible en</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR -->
+                <div class="app-qr-wrap" id="app-qr-wrap" style="display:none">
+                    <div class="app-qr-card">
+                        <img id="app-qr-img" src="" alt="Código QR para descargar la app">
+                        <p>Escanea para descargar</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
